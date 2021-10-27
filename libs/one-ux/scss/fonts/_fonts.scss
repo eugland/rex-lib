@@ -1,0 +1,8 @@
+// Directory where font's assets are stored
+$font-dir: "../../assets/fonts" !default;
+
+// Embed fonts within CSS file instead of separate download.
+$fonts-base64-embedded: true !default;
+
+@import "open-sans";
+@import "raleway-modified";

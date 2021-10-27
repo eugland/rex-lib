@@ -1,0 +1,5 @@
+<a href="#" (click)="onStepClick(step ? step.id : '')">
+	<span class="indicator" [ngClass]="iconClass">{{step ? step.number : ''}}</span>
+	<span class="title">{{step ? step.title : ''}}</span>
+</a>
+<span class="desc">{{step ? step.desc : ''}}</span>

@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/libs/one-ux",
+  "assets": [
+    "assets",
+    "scss",
+    "one-ux.scss"
+  ],
+  "lib": {
+    "entryFile": "src/index.ts"
+  }
+}
