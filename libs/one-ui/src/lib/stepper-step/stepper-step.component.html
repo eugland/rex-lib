@@ -1,5 +1,5 @@
-<a href="#" (click)="onStepClick(step ? step.id : '')">
-	<span class="indicator" [ngClass]="iconClass">{{step ? step.number : ''}}</span>
-	<span class="title">{{step ? step.title : ''}}</span>
+<a href="javascript:void" *ngIf="step" [title]="step.title" (click)="onStepClick(step.id)">
+	<span class="indicator" [ngClass]="iconClass">{{step.number}}</span>
+	<span class="title">{{step.title}}</span>
 </a>
-<span class="desc">{{step ? step.desc : ''}}</span>
+<span class="desc" *ngIf="step && step.desc !== ''">{{step.desc}}</span>

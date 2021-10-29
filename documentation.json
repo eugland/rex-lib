@@ -125,7 +125,7 @@
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export enum StepperType {\r\n\tDefault = 'default',\r\n\tHorizontal = 'horizontal'\r\n}\r\nexport enum StepperStepState {\r\n\tDefault = '',\r\n\tNextStep = 'next-step',\r\n\tComplete = 'complete',\r\n}\r\n\r\nexport interface StepperStep {\r\n\tid: string,\r\n\tnumber?: number,\r\n\ticon?: string,\r\n\ttitle: string,\r\n\tdesc: string,\r\n\tstate: StepperStepState,\r\n\tisValid: boolean,\r\n\tactive: boolean\r\n}\r\n\r\nexport interface Stepper {\r\n\tid: string,\r\n\ttype: StepperStep;\r\n}\r\n",
+            "sourceCode": "export enum StepperType {\r\n\tDefault = 'default',\r\n\tHorizontal = 'horizontal'\r\n}\r\nexport enum StepperStepState {\r\n\tDefault = '',\r\n\tNextStep = 'next-step',\r\n\tComplete = 'complete',\r\n}\r\n\r\nexport interface StepperStep {\r\n\tid: string,\r\n\tnumber?: number,\r\n\ticon?: string,\r\n\ttitle: string,\r\n\tdesc: string,\r\n\tstate: StepperStepState,\r\n\tvalid: boolean,\r\n\tactive: boolean\r\n}\r\n\r\nexport interface Stepper {\r\n\tid: string,\r\n\ttype: StepperStep;\r\n}\r\n",
             "properties": [
                 {
                     "name": "id",

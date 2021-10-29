@@ -1,5 +1,5 @@
 export enum StepperType {
-	Default = 'default',
+	Default = '',
 	Horizontal = 'horizontal'
 }
 export enum StepperStepState {
@@ -15,7 +15,7 @@ export interface StepperStep {
 	title: string,
 	desc: string,
 	state: StepperStepState,
-	isValid: boolean,
+	valid: boolean,
 	active: boolean
 }
 

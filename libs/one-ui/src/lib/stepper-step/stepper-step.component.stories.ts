@@ -32,6 +32,10 @@ const Template: Story<StepperStepComponent> = (args: StepperStepComponent) => ({
   },
 });
 
+export const StepTypeNotDefined = Template.bind({});
+StepTypeNotDefined.storyName = 'Step where arguments are not defined'
+StepTypeNotDefined.args = {};
+
 export const StepDefaultSelfDefaultActive = Template.bind({});
 StepDefaultSelfDefaultActive.args = {
   step: {
@@ -39,7 +43,7 @@ StepDefaultSelfDefaultActive.args = {
     title: 'Step Default Self Default Active',
     desc: 'Displays left aligned and unfilled circle step with primary colour without any number or icon and is not clickable',
     state: StepperStepState.Default,
-    isValid: true,
+    valid: true,
     active: true
   }
 };
@@ -51,7 +55,7 @@ StepDefaultSelfDefaultInactive.args = {
     title: 'Step Default Self Default Inactive',
     desc: 'Displays left aligned and unfilled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.Default,
-    isValid: true,
+    valid: true,
     active: false
   }
 }
@@ -63,7 +67,7 @@ StepDefaultSelfNextStepActive.args = {
     title: 'Step Default Self NextStep Active',
     desc: 'Displays left aligned and unfilled circle step with primary colour without any number or icon and is clickable',
     state: StepperStepState.NextStep,
-    isValid: true,
+    valid: true,
     active: true
   }
 }
@@ -75,7 +79,7 @@ StepDefaultSelfNextStepInactive.args = {
     title: 'Step Default Self NextStep Inactive',
     desc: 'Displays left aligned and unfilled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.NextStep,
-    isValid: true,
+    valid: true,
     active: false
   }
 }
@@ -87,7 +91,7 @@ StepDefaultSelfCompleteActive.args = {
     title: 'Step Default Self Complete Active',
     desc: 'Displays left aligned and filled circle step with primary colour without any number or icon and is clickable',
     state: StepperStepState.Complete,
-    isValid: true,
+    valid: true,
     active: true
   }
 }
@@ -99,7 +103,7 @@ StepDefaultSelfCompleteInactive.args = {
     title: 'Step Default Self Complete Inactive',
     desc: 'Displays left aligned and filled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.Complete,
-    isValid: true,
+    valid: true,
     active: false
   }
 }
@@ -111,7 +115,7 @@ StepDefaultSelfInvalidActive.args = {
     title: 'Step Default Self Invalid Active',
     desc: 'Displays left aligned and unfilled circle step with danger colour without any number or icon and is clickable',
     state: StepperStepState.NextStep,
-    isValid: false,
+    valid: false,
     active: true
   }
 }
@@ -123,7 +127,7 @@ StepDefaultSelfInvalidInactive.args = {
     title: 'Step Default Self Invalid Inactive',
     desc: 'Displays left aligned and unfilled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.NextStep,
-    isValid: false,
+    valid: false,
     active: false
   }
 }
@@ -135,7 +139,7 @@ StepDefaultSelfCompleteInvalidActive.args = {
     title: 'Step Default Self Complete Invalid Active',
     desc: 'Displays left aligned and unfilled circle step with danger colour without any number or icon and is clickable',
     state: StepperStepState.Complete,
-    isValid: false,
+    valid: false,
     active: true
   }
 }
@@ -146,8 +150,8 @@ StepDefaultSelfCompleteInvalidInactive.args = {
     id: 'step10',
     title: 'Step Default Self Complete Invalid Inactive',
     desc: 'Displays left aligned and unfilled circle step with gray colour without any number or icon and is not clickable',
-    state: StepperStepState.NextStep,
-    isValid: false,
+    state: StepperStepState.Complete,
+    valid: false,
     active: false
   }
 }
@@ -160,7 +164,7 @@ StepHorizontalSelfDefaultActive.args = {
     title: 'Step Horizontal Self Default Active',
     desc: 'Displays centered and unfilled circle step with primary colour without any number or icon and is not clickable',
     state: StepperStepState.Default,
-    isValid: true,
+    valid: true,
     active: true
   }
 }
@@ -173,7 +177,7 @@ StepHorizontalSelfDefaultInactive.args = {
     title: 'Step Horizontal Self Default Inactive',
     desc: 'Displays centered and unfilled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.Default,
-    isValid: true,
+    valid: true,
     active: false
   }
 }
@@ -186,7 +190,7 @@ StepHorizontalSelfNextStepActive.args = {
     title: 'Step Horizontal Self NextStep Active',
     desc: 'Displays centered and unfilled circle step with primary colour without any number or icon and is clickable',
     state: StepperStepState.NextStep,
-    isValid: true,
+    valid: true,
     active: true
   }
 }
@@ -199,7 +203,7 @@ StepHorizontalSelfNextStepInactive.args = {
     title: 'Step Horizontal Self NextStep Inactive',
     desc: 'Displays centered and unfilled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.NextStep,
-    isValid: true,
+    valid: true,
     active: false
   }
 }
@@ -212,7 +216,7 @@ StepHorizontalSelfCompleteActive.args = {
     title: 'Step Horizontal Self Complete Active',
     desc: 'Displays centered and filled circle step with primary colour without any number or icon and is clickable',
     state: StepperStepState.Complete,
-    isValid: true,
+    valid: true,
     active: true
   }
 }
@@ -225,7 +229,7 @@ StepHorizontalSelfCompleteInactive.args = {
     title: 'Step Horizontal Self Complete Inactive',
     desc: 'Displays centered and filled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.Complete,
-    isValid: true,
+    valid: true,
     active: false
   }
 }
@@ -238,7 +242,7 @@ StepHorizontalSelfInvalidActive.args = {
     title: 'Step Horizontal Self Invalid Active',
     desc: 'Displays centered and unfilled circle step with danger colour without any number or icon and is clickable',
     state: StepperStepState.NextStep,
-    isValid: false,
+    valid: false,
     active: true
   }
 }
@@ -251,7 +255,7 @@ StepHorizontalSelfInvalidInactive.args = {
     title: 'Step Horizontal Self Invalid Inactive',
     desc: 'Displays centered and unfilled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.NextStep,
-    isValid: false,
+    valid: false,
     active: false
   }
 }
@@ -264,7 +268,7 @@ StepHorizontalSelfCompleteInvalidActive.args = {
     title: 'Step Horizontal Self Complete Invalid Active',
     desc: 'Displays centered and filled circle step with danger colour without any number or icon and is clickable',
     state: StepperStepState.Complete,
-    isValid: false,
+    valid: false,
     active: true
   }
 }
@@ -277,7 +281,7 @@ StepHorizontalSelfCompleteInvalidInactive.args = {
     title: 'Step Horizontal Self Complete Invalid Inactive',
     desc: 'Displays centered and filled circle step with gray colour without any number or icon and is not clickable',
     state: StepperStepState.Complete,
-    isValid: false,
+    valid: false,
     active: false
   }
 }

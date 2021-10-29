@@ -1,5 +1,6 @@
 <ul class="rex-stepper flex-column flex-sm-row flex-nowrap justify-content-md-center"
-	[ngClass]="stepperClass" [id]="stepperId">
-	<li *ngFor="let step of steps; let i = index" rexStepperStep [step]="step" [type]="type" [ngClass]="stepClass(i)" (stepClick)="onStepClick($event)"
-		[id]="stepperId + '-' + step.id + '-' + i"></li>
+	[id]="stepperId" [ngClass]="stepperClass">
+	<li *ngFor="let step of steps; let i = index" rexStepperStep
+		[step]="step" [type]="type" [ngClass]="stepClass(i)" (stepClick)="onStepClick($event)"
+		[id]="stepId(i)"></li>
 </ul>

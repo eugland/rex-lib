@@ -25,6 +25,9 @@ const Template: Story<StepperComponent> = (args: StepperComponent) => ({
   },
 });
 
+export const DefaultUndefined = Template.bind({});
+DefaultUndefined.args = {};
+
 export const Default = Template.bind({});
 Default.args = {
   steps: [
@@ -33,7 +36,7 @@ Default.args = {
       title: 'Single Step',
       desc: 'Only displays one left aligned step in the stepper',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     },
   ]
@@ -48,7 +51,7 @@ DefaultHorizontal.args = {
       title: 'Single Step Horizontal',
       desc: 'Only displays one centered step in the stepper',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     },
   ]
@@ -64,7 +67,7 @@ TwoStepsDefault.args = {
       title: 'Step 1 of 2 Default',
       desc: 'Vertical stepper',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -72,7 +75,7 @@ TwoStepsDefault.args = {
       title: 'Step 2 of 2 Default',
       desc: 'Vertical stepper',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     }
   ]
@@ -88,7 +91,7 @@ TwoStepsHorizontal.args = {
       title: 'Step 1 of 2 Horizontal',
       desc: 'Horizontal stepper',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -96,7 +99,7 @@ TwoStepsHorizontal.args = {
       title: 'Step 2 of 2 Horizontal',
       desc: 'Horizontal Stepper',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     }
   ]
@@ -113,7 +116,7 @@ FourStepsDefault.args = {
       title: 'Step 1 of 4 Default',
       desc: 'Vertical, Valid and Complete',
       state: StepperStepState.Complete,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -122,7 +125,7 @@ FourStepsDefault.args = {
       title: 'Step 2 of 4 Default',
       desc: 'Vertical, Invalid and Complete',
       state: StepperStepState.Complete,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -131,7 +134,7 @@ FourStepsDefault.args = {
       title: 'Step 3 of 4 Default',
       desc: 'Vertical, Invalid and Next Step',
       state: StepperStepState.NextStep,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -140,7 +143,7 @@ FourStepsDefault.args = {
       title: 'Step 4 of 4 Default',
       desc: 'Vertical, Valid and Inactive',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: false
     }
   ]
@@ -158,7 +161,7 @@ FourStepsHorizontal.args = {
       title: 'Step 1 of 4 Horizontal',
       desc: 'Horizontal, Valid and Complete',
       state: StepperStepState.Complete,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -167,7 +170,7 @@ FourStepsHorizontal.args = {
       title: 'Step 2 of 4 Horizontal',
       desc: 'Horizontal, Invalid and Complete',
       state: StepperStepState.Complete,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -176,7 +179,7 @@ FourStepsHorizontal.args = {
       title: 'Step 3 of 4 Horizontal',
       desc: 'Horizontal, Invalid and Next Step',
       state: StepperStepState.NextStep,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -185,7 +188,7 @@ FourStepsHorizontal.args = {
       title: 'Step 4 of 4 Horizontal',
       desc: 'Horizontal, Valid and Inactive',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: false
     }
   ]
@@ -202,7 +205,7 @@ AllPossibleDefaultStates.args = {
       title: 'Default & Valid',
       desc: 'Horizontal, Valid and Active',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -210,7 +213,7 @@ AllPossibleDefaultStates.args = {
       title: 'Default & Current',
       desc: 'Horizontal, Valid, Active and Current',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -218,7 +221,7 @@ AllPossibleDefaultStates.args = {
       title: 'Default & Invalid',
       desc: 'Horizontal, Invalid and Active',
       state: StepperStepState.Default,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -226,7 +229,7 @@ AllPossibleDefaultStates.args = {
       title: 'Default & Inactive',
       desc: 'Horizontal, Valid and Inactive',
       state: StepperStepState.Default,
-      isValid: true,
+      valid: true,
       active: false
     }
   ]
@@ -243,7 +246,7 @@ AllPossibleNextStepStates.args = {
       title: 'Next Step & Valid',
       desc: 'Horizontal, Next Step, Valid and Active',
       state: StepperStepState.NextStep,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -251,7 +254,7 @@ AllPossibleNextStepStates.args = {
       title: 'Next Step & Current',
       desc: 'Horizontal, Next Step, Valid, Active and Current',
       state: StepperStepState.NextStep,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -259,7 +262,7 @@ AllPossibleNextStepStates.args = {
       title: 'Next Step & Invalid',
       desc: 'Horizontal, Next Step, Invalid and Active',
       state: StepperStepState.NextStep,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -267,7 +270,7 @@ AllPossibleNextStepStates.args = {
       title: 'Next Step & Inactive',
       desc: 'Horizontal, Next Step, Valid and Inactive',
       state: StepperStepState.NextStep,
-      isValid: true,
+      valid: true,
       active: false
     }
   ]
@@ -284,7 +287,7 @@ AllPossibleCompleteStates.args = {
       title: 'Complete & Valid',
       desc: 'Horizontal, Complete, Valid and Active',
       state: StepperStepState.Complete,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -292,7 +295,7 @@ AllPossibleCompleteStates.args = {
       title: 'Complete & Current',
       desc: 'Horizontal, Complete, Valid, Active and Current',
       state: StepperStepState.Complete,
-      isValid: true,
+      valid: true,
       active: true
     },
     {
@@ -300,7 +303,7 @@ AllPossibleCompleteStates.args = {
       title: 'Complete & Invalid',
       desc: 'Horizontal, Complete, Invalid and Active',
       state: StepperStepState.Complete,
-      isValid: false,
+      valid: false,
       active: true
     },
     {
@@ -308,7 +311,7 @@ AllPossibleCompleteStates.args = {
       title: 'Complete & Inactive',
       desc: 'Horizontal, Complete, Valid and Inactive',
       state: StepperStepState.Complete,
-      isValid: true,
+      valid: true,
       active: false
     }
   ]

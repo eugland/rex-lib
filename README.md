@@ -42,3 +42,25 @@ nx storybook {app-project-name | library-project-name}
 ## Run main storybook site
 
 npm run storybook
+
+## Run jest unit test
+
+nx test {app-project-name | library-project-name} --verbose
+
+## Run e2e test (Screenshot and video of failed tests can be found inside dist/cypress folder)
+
+nx run {app-project-name | library-project-name}-e2e:e2e
+
+## Run e2e test and watch
+
+nx run {app-project-name | library-project-name}-e2e:e2e --watch
+
+## Run dep-graph
+
+### To view overall dep-graph
+
+nx dep-graph
+
+### To view affected:dep-graph
+
+nx affected:dep-graph
