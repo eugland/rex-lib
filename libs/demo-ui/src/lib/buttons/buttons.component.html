@@ -1,0 +1,242 @@
+<div class="container">
+  <div class="row">
+    <h1 id="button">Button</h1>
+  </div>
+</div>
+<hr />
+
+<div class="container">
+  <p><b>Context Class:</b> primary, secondary, success, warning, and danger</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="bt1"
+      class="btn btn-primary bg-primary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="bt2"
+      class="btn btn-primary bg-secondary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="bt3"
+      class="btn btn-primary bg-success"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="bt4"
+      class="btn btn-primary bg-warning"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="bt5"
+      class="btn btn-primary bg-danger"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+  </div>
+  <hr />
+
+  <p><b>Decorator:</b> none, outline, link,</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="btn6"
+      class="btn btn-primary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="btn7"
+      class="btn btn-outline-primary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="btn8"
+      class="btn btn-link-primary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+  </div>
+  <hr />
+
+  <p>More Complex Construct</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="btn9"
+      class="btn btn-primary"
+      type="button"
+      (click)="clicked($event)"
+    >
+      <i class="fas fa-camera"></i>
+      <span>Multi-Function Button</span>
+    </button>
+  </div>
+  <hr />
+
+  <p><b>Dynamic Theme:</b>Type in style in the field below</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <input [(ngModel)]="button_class" [ngModelOptions]="{standalone: true}" />
+    <a
+      id="btn10"
+      [class]="button_class"
+      role="button"
+      (click)="clicked($event)"
+    >
+      Button
+    </a>
+  </div>
+  <hr />
+
+  <p>Button - primary</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="button1"
+      class="btn btn-primary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="button2"
+      class="btn btn-primary"
+      type="submit"
+      disabled
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+  </div>
+  <hr />
+
+  <p>Button - outline primary</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="button3"
+      class="btn btn-outline-primary"
+      type="button"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="button4"
+      class="btn btn-outline-primary"
+      type="button"
+      disabled
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+  </div>
+  <hr />
+
+  <p>Button - link primary</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a
+      id="button5"
+      class="btn btn-link-primary"
+      href="./buttons#0"
+      role="button"
+      (click)="clicked($event)"
+      >Button</a
+    >
+    <a
+      id="button6"
+      class="btn btn-link-primary disabled"
+      role="button"
+      aria-disabled="true"
+      (click)="clicked($event)"
+      >Button</a
+    >
+  </div>
+  <hr />
+
+  <p>Button - secondary</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="button7"
+      class="btn btn-secondary"
+      type="submit"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="button8"
+      class="btn btn-secondary"
+      type="submit"
+      disabled
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+  </div>
+
+  <hr />
+
+  <p>Button - outline secondary</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <button
+      id="button9"
+      class="btn btn-outline-secondary"
+      type="button"
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+    <button
+      id="button10"
+      class="btn btn-outline-secondary"
+      type="button"
+      disabled
+      (click)="clicked($event)"
+    >
+      Button
+    </button>
+  </div>
+  <hr />
+
+  <p>Button - link secondary</p>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a
+      id="button11"
+      class="btn btn-link-secondary"
+      href="./buttons#1"
+      role="button"
+      (click)="clicked($event)"
+    >
+      Button
+    </a>
+    <a
+      id="button12"
+      class="btn btn-link-secondary disabled"
+      role="button"
+      aria-disabled="true"
+      (click)="clicked($event)"
+    >
+      Button
+    </a>
+  </div>
+</div>

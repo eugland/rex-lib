@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <h1>Type Ahead</h1>
+  </div>
+</div>
+<hr />
+
+<div class="container">
+  <div class="row">
+    <p>
+      <b>Simple Type Ahead: </b>A typeahead example that gets candidates from a
+      static input
+    </p>
+    <form>
+      <div class="form-group">
+        <label for="typeahead-basic">Search for a state or province:</label>
+        <input
+          class="in"
+          id="typeahead-basic"
+          type="text"
+          class="form-control"
+          [(ngModel)]="model"
+          [typeahead]="states"
+          [ngModelOptions]="{standalone: true}"
+        />
+      </div>
+    </form>
+  </div>
+</div>

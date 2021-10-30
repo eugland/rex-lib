@@ -41,6 +41,13 @@
       "tags": [],
       "implicitDependencies": ["demo"]
     },
+    "demo-ui": {
+      "tags": []
+    },
+    "demo-ui-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-ui"]
+    },
     "one-ui": {
       "tags": [],
       "implicitDependencies": ["one-ux"]

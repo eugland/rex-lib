@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@rex-lib/demo-ui": ["libs/demo-ui/src/index.ts"],
       "@rex-lib/one-ui": ["libs/one-ui/src/index.ts"],
       "@rex-lib/one-ux": ["libs/one-ux/src/index.ts"]
     }

@@ -1,0 +1,40 @@
+<h1 class="mb-5">Grids and pagination</h1>
+
+<div class="grid-container">
+  <div class="grid-group">
+    <ag-grid-angular
+      #agGrid1
+      style="width: 100%; height: 300px"
+      id="myGrid2"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs1"
+      [defaultColDef]="defaultColDef1"
+      [rowSelection]="rowSelection1"
+      [rowData]="rowData1"
+      (selectionChanged)="onSelectionChanged($event)"
+      (gridReady)="onGridReady1($event)"
+    ></ag-grid-angular>
+  </div>
+
+  <div class="grid-group">
+    <ag-grid-angular
+      #agGrid
+      style="width: 100%; height: 600px"
+      id="myGrid"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs2"
+      [autoGroupColumnDef]="autoGroupColumnDef"
+      [defaultColDef]="defaultColDef"
+      [suppressRowClickSelection]="true"
+      [groupSelectsChildren]="true"
+      [debug]="true"
+      [rowSelection]="rowSelection"
+      [rowGroupPanelShow]="rowGroupPanelShow"
+      [pivotPanelShow]="pivotPanelShow"
+      [enableRangeSelection]="true"
+      [pagination]="true"
+      [rowData]="rowData2"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>
+</div>
