@@ -1,0 +1,48 @@
+@import "~ag-grid-community/src/styles/ag-grid.scss";
+@import "~ag-grid-community/src/styles/ag-theme-alpine/sass/_ag-theme-alpine-mixin.scss";
+@import "../overrides.scss";
+
+.ag-theme-alpine {
+  @include ag-theme-alpine((
+    foreground-color: $black,
+    odd-row-background-color: $gray-100,
+    selected-row-background-color: $gray-500,
+    row-border-color: $border-gray,
+    row-hover-color: null,
+    checkbox-checked-color: #2661ad,
+    range-selection-border-color: #ff00b1,
+    range-selection-background-color: null,
+    header-background-color: null,
+    header-column-separator: false,
+    header-column-resize-handle-width: 0,
+    font-family: $font-family-sans-serif,
+    borders: false
+  ));
+
+  .ag-root-wrapper {
+    border: 1px solid $border-gray; 
+  }
+
+  .ag-cell-label-container.ag-header-cell-sorted-asc .ag-header-cell-text,
+  .ag-cell-label-container.ag-header-cell-sorted-desc .ag-header-cell-text {
+    font-weight: bold;
+  }
+
+  .ag-header-cell-label {
+    font-weight: normal;
+  }
+
+  .ag-menu-option-active {
+    background-color: #2661ad;
+    color: white;
+  }
+}
+
+html, body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

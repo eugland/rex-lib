@@ -11,8 +11,8 @@ export class ButtonsComponent {
   clicked(event: Event): void {
     const target = event.target as Element;
     console.log(target.className);
-    alert(
-      `You just clicked button{id="${target.id}" class="${target.className}"}`
-    );
+    //alert(
+    //  `You just clicked button{id="${target.id}" class="${target.className}"}`
+    //);
   }
 }

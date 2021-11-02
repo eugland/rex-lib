@@ -8,7 +8,8 @@ const routes: Routes = [
 	{ path: 'grids', loadChildren: () => import('./grids/grids.module').then(m => m.GridsModule) },
 	{ path: 'links', loadChildren: () => import('./links/links.module').then(m => m.LinksModule) },
 	{ path: 'typeaheads', loadChildren: () => import('./typeaheads/typeaheads.module').then(m => m.TypeaheadsModule) },
-	{ path: 'typography', loadChildren: () => import('./typography/typography.module').then(m => m.TypographyModule) }
+	{ path: 'typography', loadChildren: () => import('./typography/typography.module').then(m => m.TypographyModule) },
+	{ path: 'checkboxes', loadChildren: () => import('./checkboxes/checkboxes.module').then(m => m.CheckboxesModule) },
 ];
 
 @NgModule({

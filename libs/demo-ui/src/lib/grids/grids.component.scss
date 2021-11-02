@@ -1,2 +1,18 @@
-@import 'ag-grid-community/dist/styles/ag-grid.scss';
-@import 'ag-grid-community/dist/styles/ag-theme-alpine/sass/ag-theme-alpine.scss';
+//@import 'ag-grid-community/dist/styles/ag-grid.scss';
+//@import 'ag-grid-community/dist/styles/ag-theme-alpine/sass/ag-theme-alpine.scss';
+
+//@import "ag-grid-community/dist/styles/ag-grid.css";
+//@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "../../../../one-ux/scss/overrides";
+.grid-group {
+    margin-bottom: 80px;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    font-family: $font-family-sans-serif-heading;
+}
+
+.grid-container {
+  padding-bottom: 60px;
+}

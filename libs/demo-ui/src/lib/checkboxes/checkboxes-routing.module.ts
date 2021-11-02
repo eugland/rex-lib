@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GridsComponent } from './grids.component';
+import { CheckboxesComponent } from './checkboxes.component';
 
-const routes: Routes = [{ path: '', component: GridsComponent }];
+const routes: Routes = [{ path: '', component: CheckboxesComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [],
 })
-export class GridsRoutingModule {}
+export class CheckboxesRoutingModule {}
 

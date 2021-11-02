@@ -7,8 +7,10 @@ import { DemoUIRoutingModule } from './demo-ui-routing.module';
     CommonModule,
     DemoUIRoutingModule
   ],
-  declarations: [],
-  exports: [],
+  declarations: [
+  ],
+  exports: [
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DemoUIModule {}
