@@ -183,7 +183,65 @@ a{
 
 }
 
+.form-check-input:checked[type=checkbox]{
+    &:hover{
+        background-color: $rex-primary-dark-1;
+    }
+    &:active{
+        background-color: $rex-primary-light-2;
+    }
+    &:disabled{
+        background-color: $rex-check-bg-checked-disabled;
+        color: $rexcheck-text-disabled;
+        border: none;
 
+    }
+
+}
+
+.form-check-input[type=checkbox]{
+    &:hover{
+        background-color: $rex-primary-light-1;
+    }
+    &:active{
+        background-color: $rex-primary-light-2;
+    }
+    &:disabled{
+        background-color: $rex-check-bg-disabled;
+        color: $rexcheck-text-disabled;     
+    }
+
+}
+.form-check-input:checked[type=radio]{
+    background-color: $rex-light;
+    &:hover{
+        background-color: $rex-light;
+    }
+    &:active{
+        background-color: $rex-primary-light-2;
+    }
+    &:disabled{
+        background-color: $rex-check-bg-checked-disabled;
+        color: $rexcheck-text-disabled;
+        border: none;
+
+    }
+
+}
+.form-check-input[type=radio]{
+    background-color: $rex-light;
+    &:hover{
+        background-color: $rex-primary-light-1;
+    }
+    &:active{
+        background-color: $rex-primary-light-2;
+    }
+    &:disabled{
+        background-color: $rex-check-bg-disabled;
+        color: $rexcheck-text-disabled;     
+    }
+
+}
 
 
 

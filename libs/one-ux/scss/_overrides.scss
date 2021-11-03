@@ -30,6 +30,11 @@ $rex-round-button-enabled: true !default;
 
 @if ($rex-round-button-enabled == true) {
 	$rex-round-button: 4px;
+	$rex-round-check: 0.25em;
+	$form-check-input-border-radius:          $rex-round-check;//.25em; 
+
 } @else {
 	$rex-round-button: 0px;
+	$rex-round-check: 0em;
+	$form-check-input-border-radius:          $rex-round-check;//.25em; 
 }

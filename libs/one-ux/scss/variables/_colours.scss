@@ -116,6 +116,11 @@ $rex-btn-text-secondary-dark: $gray-700 !default;
 $rex-btn-disable: $gray-500 !default;
 $rex-focus-transition: box-shadow 0.1s ease-in-out;
 
+//Override Checkbox Colours
+$rex-check-bg-disabled: $rex-light !default;
+$rexcheck-text-disabled: $gray-400 !default;
+$rex-check-bg-checked-disabled: $gray-300 !default;
+
 //Override Button Radious
 $rex-sharp-button: 0px;
 $rex-round-button: 4px;
