@@ -1,0 +1,104 @@
+@if ($icons-core-enabled == true) {
+
+  .fal.fa-bars:before {
+    content: "\f0c9";
+  }
+  .fal.fa-calendar-alt:before {
+    content: "\f073";
+  }
+  .fal.fa-calendar-check:before {
+    content: "\f274";
+  }
+  .fal.fa-caret-down:before {
+    content: "\f0d7";
+  }
+  .fal.fa-check-square:before {
+    content: "\f14a";
+  }
+  .fal.fa-chevron-double-down:before {
+    content: "\f322";
+  }
+  .fal.fa-chevron-double-up:before {
+    content: "\f325";
+  }
+  .fal.fa-chevron-down:before {
+    content: "\f078";
+  }
+  .fal.fa-chevron-right:before {
+    content: "\f054";
+  }
+  .fal.fa-chevron-up:before {
+    content: "\f077";
+  }
+  .fal.fa-clock:before {
+    content: "\f017";
+  }
+  .fal.fa-ellipsis-h:before {
+    content: "\f141";
+  }
+  .fal.fa-ellipsis-v:before {
+    content: "\f142";
+  }
+  .fal.fa-envelope:before {
+    content: "\f0e0";
+  }
+  .fal.fa-external-link:before, .fal.fa-external-link:after {
+    content: "\f08e";
+  }
+  .fal.fa-eye:before {
+    content: "\f06e";
+  }
+  .fal.fa-flag:before {
+    content: "\f024";
+  }
+  .fal.fa-globe:before {
+    content: "\f0ac";
+  }
+  .fal.fa-home:before {
+    content: "\f015";
+  }
+  .fal.fa-info:before {
+    content: "\f129";
+  }
+  .fal.fa-info-circle:before {
+    content: "\f05a";
+  }
+  .fal.fa-pennant:before {
+    content: "\f456";
+  }
+  .fal.fa-phone:before {
+    content: "\f095";
+  }
+  .fal.fa-search:before {
+    content: "\f002";
+  }
+  .fal.fa-sort:before {
+    content: "\f0dc";
+  }
+  .fal.fa-sort-down:before {
+    content: "\f0dd";
+  }
+  .fal.fa-sort-up:before {
+    content: "\f0de";
+  }
+  .fal.fa-square:before {
+    content: "\f0c8";
+  }
+  .fal.fa-times:before {
+    content: "\f00d";
+  }
+  .fal.fa-trash:before {
+    content: "\f1f8";
+  }
+  .fal.fa-user:before {
+    content: "\f007";
+  }
+  .fal.fa-user-md:before {
+    content: "\f0f0";
+  }
+  .fal.fa-user-slash:before {
+    content: "\f506";
+  }
+
+
+}

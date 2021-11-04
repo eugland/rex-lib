@@ -1,0 +1,30 @@
+
+
+@if ($icons-core-enabled == true) {
+
+  /*
+  data:font/truetype;charset=utf-8;base64,
+  */
+  
+@font-face {
+  font-family: 'core-light';
+  src:
+    url("#{$icons-dir}/core-light.ttf")
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+a[class^="fal "]:before, a[class*=" fal "]:before,
+a[class^="fal "]:after, a[class*=" fal "]:after {
+  line-height: inherit !important;
+}
+:not(a)[class^="fal "], :not(a)[class*=" fal "],
+a[class^="fal "]:before, a[class*=" fal "]:before,
+a[class^="fal "]:after, a[class*=" fal "]:after {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'core-light' !important;
+}
+
+}

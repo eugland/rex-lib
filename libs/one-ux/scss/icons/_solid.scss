@@ -1,0 +1,25 @@
+@if ($icons-core-enabled == true) {
+
+.fas.fa-check-square:before {
+  content: "\f14a";
+}
+.fas.fa-circle:before {
+  content: "\f111";
+}
+.fas.fa-eye:before {
+  content: "\f06e";
+}
+.fas.fa-flag:before {
+  content: "\f024";
+}
+.fas.fa-pennant:before {
+  content: "\f456";
+}
+.fas.fa-user:before {
+  content: "\f007";
+}
+.fas.fa-users:before {
+  content: "\f0c0";
+}
+
+}
