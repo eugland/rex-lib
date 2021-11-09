@@ -1,0 +1,10 @@
+@if ($icons-core-enabled == true) {
+
+.far.fa-circle:before {
+content: "\f111";
+}
+.far.fa-dot-circle:before {
+content: "\f192";
+}
+
+}

@@ -8,12 +8,7 @@
 //$font-family-sans-serif: "Open Sans",Helvetica,Arial,sans-serif !default;
 
 
-@import "./scss/variables/typography";
-@import "./scss/variables/colours";
-@import "./scss/variables/checkboxes";
-
-
-
+//Enable Fonts
 $font-onds-enabled: true !default;
 
 @if ($font-onds-enabled == true) {
@@ -26,6 +21,12 @@ $font-family-base: "Open Sans",Helvetica,Arial,sans-serif !default;
 $font-family-sans-serif-heading: "Helvetica Neue",Helvetica,Arial,sans-serif !default;
 $font-family-sans-serif: "Open Sans",Helvetica,Arial,sans-serif !default ;
 
+//Enable icons
+$icons-core-enabled: true !default ;
+
+
+
+//Enable round button
 $rex-round-button-enabled: true !default;
 
 @if ($rex-round-button-enabled == true) {
@@ -38,3 +39,9 @@ $rex-round-button-enabled: true !default;
 	$rex-round-check: 0em;
 	$form-check-input-border-radius:          $rex-round-check;//.25em; 
 }
+
+
+
+@import "./scss/variables/typography";
+@import "./scss/variables/colours";
+@import "./scss/variables/checkboxes";

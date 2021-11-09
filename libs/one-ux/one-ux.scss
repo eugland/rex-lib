@@ -1,9 +1,10 @@
 @import "scss/overrides";
 @import "scss/fonts/fonts";
+@import "scss/icons/icons.scss";
 @import "bootstrap/scss/bootstrap.scss";
 
-@import "./scss/variables/ag-grid";
-@import "./scss/variables/stepper";
+@import "scss/ag-grid";
+@import "scss/stepper";
 
-@import "scss/variables/global";
+@import "scss/global";
 

@@ -13,6 +13,7 @@ const routes: Routes = [
 	{ path: 'checkboxes', loadChildren: () => import('./checkboxes/checkboxes.module').then(m => m.CheckboxesModule) },
 	{ path: 'radio', loadChildren: () => import('./radio/radio.module').then(m => m.RadioModule) },
 	{ path: 'switch', loadChildren: () => import('./switch/switch.module').then(m => m.SwitchModule) },
+	{ path: 'iconography', loadChildren: () => import('./iconography/iconography.module').then(m => m.IconographyModule) },
 ];
 
 @NgModule({

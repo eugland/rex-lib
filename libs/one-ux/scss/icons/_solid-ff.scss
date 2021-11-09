@@ -1,0 +1,24 @@
+@if ($icons-core-enabled == true) {
+
+@font-face {
+font-family: 'core-solid';
+src:
+url("#{$icons-dir}/core-solid.ttf") format('truetype');
+font-weight: normal;
+font-style: normal;
+font-display: block;
+}
+
+a[class^="fas "]:before, a[class*=" fas "]:before,
+a[class^="fas "]:after, a[class*=" fas "]:after {
+  line-height: inherit !important;
+}
+:not(a)[class^="fas "], :not(a)[class*=" fas "],
+a[class^="fas "]:before, a[class*=" fas "]:before,
+a[class^="fas "]:after, a[class*=" fas "]:after {
+
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'core-solid' !important;
+}
+
+}

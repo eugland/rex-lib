@@ -1,0 +1,23 @@
+@if ($icons-core-enabled == true) {
+
+@font-face {
+font-family: 'core-regular';
+src:
+    url("#{$icons-dir}/core-regular.ttf") format('truetype');
+font-weight: normal;
+font-style: normal;
+font-display: block;
+}
+
+a[class^="far "]:before, a[class*=" far "]:before,
+a[class^="far "]:after, a[class*=" far "]:after {
+  line-height: inherit !important;
+}
+:not(a)[class^="far "], :not(a)[class*=" far "],
+a[class^="far "]:before, a[class*=" far "]:before,
+a[class^="far "]:after, a[class*=" far "]:after {
+/* use !important to prevent issues with browser extensions that change fonts */
+font-family: 'core-regular' !important;
+}
+
+}

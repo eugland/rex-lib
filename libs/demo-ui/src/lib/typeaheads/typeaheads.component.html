@@ -6,7 +6,7 @@
 <hr />
 
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-around">
     <p>
       <b>Simple Type Ahead: </b>A typeahead example that gets candidates from a
       static input
@@ -25,5 +25,33 @@
         />
       </div>
     </form>
+    <p>Your Selected item: {{model}} </p>
+
+
+    <hr>
+    <p>
+      <b>Iconed Type Ahead: </b>A typeahead example that gets candidates from a
+      static input
+    </p>
+
+    <hr>
+    <p><b>Self-built Typeahead: </b> this type ahead is self built, without the use
+      of any ngx-boostrap component. A self built typeahead gives us
+      greater flexibility in customizing</p>
+    <form>
+      <div class="form-group">
+        <label for="typeahead-basic">Search for a state or province:</label>
+        <input
+          class="in"
+          id="typeahead-basic"
+          type="text"
+          class="form-control"
+          [(ngModel)]="model"
+          [typeahead]="states"
+          [ngModelOptions]="{standalone: true}"
+        />
+      </div>
+    </form>
+
   </div>
 </div>

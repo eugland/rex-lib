@@ -1,0 +1,31 @@
+// Directory where icon's assets are stored
+$icons-dir: "../../assets/icons" !default;
+
+
+@if ($icons-core-enabled == true) {
+  :not(a)[class^="fa-"], :not(a)[class*=" fa-"],
+  a[class^="fa-"]:before, a[class*=" fa-"]:before,
+  a[class^="fa-"]:after, a[class*=" fa-"]:after {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@import "light-ff";
+@import "regular-ff";
+@import "solid-ff";
+
+
+@import "light";
+@import "regular";
+@import "solid";
+
