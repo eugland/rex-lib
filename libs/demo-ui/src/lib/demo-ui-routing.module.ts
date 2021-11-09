@@ -6,7 +6,7 @@ const routes: Routes = [
 	{ path: 'buttons', loadChildren: () => import('./buttons/buttons.module').then(m => m.ButtonsModule) },
 	{ path: 'colours', loadChildren: () => import('./colours/colours.module').then(m => m.ColoursModule) },
   { path: 'grids', loadChildren: () => import('./grids/grids.module').then(m => m.GridsModule) },
-  { path: 'date-picker', loadChildren: () => import('./grids/grids.module').then(m => m.GridsModule) },
+  { path: 'date-picker', loadChildren: () => import('./date-picker/date-picker.module').then(m => m.DatePickerModule) },
 	{ path: 'links', loadChildren: () => import('./links/links.module').then(m => m.LinksModule) },
 	{ path: 'typeaheads', loadChildren: () => import('./typeaheads/typeaheads.module').then(m => m.TypeaheadsModule) },
 	{ path: 'typography', loadChildren: () => import('./typography/typography.module').then(m => m.TypographyModule) },

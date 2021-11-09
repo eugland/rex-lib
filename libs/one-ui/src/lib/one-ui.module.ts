@@ -3,9 +3,15 @@ import { CommonModule } from '@angular/common';
 import { StepperStepComponent } from './stepper-step/stepper-step.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { FormsModule } from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    BsDatepickerModule.forRoot()
+  ],
   declarations: [
     StepperStepComponent,
     StepperComponent,
@@ -15,6 +21,7 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     StepperStepComponent,
     StepperComponent,
     DatepickerComponent
-  ],
+  ]
 })
-export class OneUIModule {}
+export class OneUIModule {
+}
