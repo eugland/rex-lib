@@ -1,10 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-12 col-md-4 form-group">
-      <input type="text"
-             placeholder="Datepicker"
-             class="form-control"
-             bsDatepicker>
-    </div>
+<form *ngIf="formGroup" [formGroup]="formGroup">
+  <label [for]="id" class="mb-2">Enter a Date</label>
+  <div class="form-group">
+    <input type="text"
+           placeholder="Datepicker"
+           class="form-control date-input"
+           bsDatepicker
+           [minDate]="minDate"
+           [maxDate]="maxDate"
+           [bsConfig]="{ adaptivePosition: true }"
+           [isDisabled]="isDisabled === true"
+           [daysDisabled]="disabledDays"
+           [formControlName]="formControlName"
+           [id]="id">
   </div>
-</div>
+  <div *ngIf="showError()" class="error-message mt-2">Please enter a valid date</div>
+</form>
