@@ -32,32 +32,37 @@
       }
     ]
   },
-  "projects": {
-    "demo": {
-      "tags": [],
-      "implicitDependencies": []
+  "cli": {
+    "analytics": false,
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "defaultProject": "demo",
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
     },
-    "demo-e2e": {
-      "tags": [],
-      "implicitDependencies": ["demo"]
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "demo-ui": {
-      "tags": []
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
     },
-    "demo-ui-e2e": {
-      "tags": [],
-      "implicitDependencies": ["demo-ui"]
-    },
-    "one-ui": {
-      "tags": [],
-      "implicitDependencies": ["one-ux"]
-    },
-    "one-ui-e2e": {
-      "tags": [],
-      "implicitDependencies": ["one-ui"]
-    },
-    "one-ux": {
-      "tags": []
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   }
 }
