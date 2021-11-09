@@ -2,7 +2,7 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { StepperStepComponent } from './stepper-step.component';
 import { action } from '@storybook/addon-actions';
-import { StepperStepState, StepperType } from '../stepper.models';
+import { StepperStepState, StepperType } from '../models/stepper.models';
 import { CommonModule } from '@angular/common';
 import { OneUIModule } from '../one-ui.module';
 

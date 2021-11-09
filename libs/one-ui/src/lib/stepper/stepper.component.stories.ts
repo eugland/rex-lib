@@ -2,7 +2,7 @@ import { moduleMetadata, Story, Meta } from '@storybook/angular';
 import { StepperStepComponent } from '../stepper-step/stepper-step.component';
 import { StepperComponent } from './stepper.component';
 import * as stepperStepComponentStories from '../stepper-step/stepper-step.component.stories';
-import { StepperStepState, StepperType } from '../stepper.models';
+import { StepperStepState, StepperType } from '../models/stepper.models';
 import { CommonModule } from '@angular/common';
 
 export default {
