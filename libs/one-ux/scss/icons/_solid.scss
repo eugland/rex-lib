@@ -1,25 +1,55 @@
 @if ($icons-core-enabled == true) {
 
-.fas.fa-check-square:before {
-  content: "\f14a";
-}
-.fas.fa-circle:before {
-  content: "\f111";
-}
-.fas.fa-eye:before {
-  content: "\f06e";
-}
-.fas.fa-flag:before {
-  content: "\f024";
-}
-.fas.fa-pennant:before {
-  content: "\f456";
-}
-.fas.fa-user:before {
-  content: "\f007";
-}
-.fas.fa-users:before {
-  content: "\f0c0";
-}
+  .fas.fa-check-circle:before {
+    content: "\e900";
+  }
+  .fas.fa-exclamation-triangle:before {
+    content: "\e901";
+  }
+  .fas.fa-heart:before {
+    content: "\e902";
+  }
+  .fas.fa-info-circle:before {
+    content: "\e903";
+  }
+  .fas.fa-plus-circle:before {
+    content: "\e904";
+  }
+  .fas.fa-question-circle:before {
+    content: "\e905";
+  }
+  .fas.fa-shield-check:before {
+    content: "\e906";
+  }
+  .fas.fa-shield:before {
+    content: "\e907";
+  }
+  .fas.fa-th-large:before {
+    content: "\e908";
+  }
+  .fas.fa-th:before {
+    content: "\e909";
+  }
+  .fas.fa-check-square:before {
+    content: "\f14a";
+  }
+  .fas.fa-circle:before {
+    content: "\f111";
+  }
+  .fas.fa-eye:before {
+    content: "\f06e";
+  }
+  .fas.fa-flag:before {
+    content: "\f024";
+  }
+  .fas.fa-pennant:before {
+    content: "\f456";
+  }
+  .fas.fa-user:before {
+    content: "\f007";
+  }
+  .fas.fa-users:before {
+    content: "\f0c0";
+  }
 
 }
