@@ -1,57 +1,162 @@
-<div class="container">
-  <div class="row">
-    <h1>Type Ahead</h1>
+<div class='container'>
+  <div class='row'>
+    <h1>Typeahead (WIP)</h1>
   </div>
 </div>
 <hr />
 
-<div class="container">
-  <div class="row justify-content-around">
-    <p>
-      <b>Simple Type Ahead: </b>A typeahead example that gets candidates from a
-      static input
+<div class='container'>
+  <div class='row justify-content-around section'>
+    <h3 id='simple-typeahead'>Simple Typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#simple-typeahead">#</a>
+    </h3>
+  </div>
+  <div class='row justify-content-around section'>
+
+
+   <p>
+      A simple typehead shows text candidates from a string array.
     </p>
+
     <form>
-      <div class="form-group">
-        <label for="typeahead-basic">Search for a state or province:</label>
+
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{simple_typeahead_selected}}' </pre>
         <input
-          class="in"
-          id="typeahead-basic"
-          type="text"
-          class="form-control"
-          [(ngModel)]="model"
-          [typeahead]="states"
-          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]='simple_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          class='form-control'
+          type='text'
         />
       </div>
     </form>
-    <p>Your Selected item: {{model}} </p>
 
 
-    <hr>
+
+  </div>
+
+  <div class='row justify-content-around section'>
+
     <p>
-      <b>Iconed Type Ahead: </b>A typeahead example that gets candidates from a
-      static input
+      <b>Animated </b> simple type ahead
     </p>
-
-    <hr>
-    <p><b>Self-built Typeahead: </b> this type ahead is self built, without the use
-      of any ngx-boostrap component. A self built typeahead gives us
-      greater flexibility in customizing</p>
     <form>
-      <div class="form-group">
-        <label for="typeahead-basic">Search for a state or province:</label>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{animated_typeahead_select}}' </pre>
+
         <input
-          class="in"
-          id="typeahead-basic"
-          type="text"
-          class="form-control"
-          [(ngModel)]="model"
-          [typeahead]="states"
-          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]='animated_typeahead_select'
+          [isAnimated]='true'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          class='form-control'
+          type='text'
         />
       </div>
     </form>
 
   </div>
+
+  <div class='row justify-content-around section'>
+
+    <p>
+      <b>Adaptive </b> simple type ahead: the dropdown may decide direction
+      of expansion according to list length adaptively.
+    </p>
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{adaptive_typeahead_select}}' </pre>
+        <input
+          [(ngModel)]='adaptive_typeahead_select'
+          [adaptivePosition]='true'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+
+  </div>
+
+
+
+
+  <br>
+
+  <div class='row justify-content-around section'>
+    <h3 id='item-templated-typeahead'>Item Templated Typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#item-templated-typeahead">#
+      </a>
+    </h3>
+  </div>
+  <div class='row justify-content-around section'>
+
+    <p>
+      The user will supply a Item template(<code>ng-template</code>) alongside the content list, the typeahead
+      component will automatically populate the item template by items from the
+      content list and display inflated items in the typeahead selection dropdown.
+    </p>
+    <ng-template #ItemTemplate let-model="item" let-index="index">
+      <p style='margin: 0'><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + model['flag']"  style="width: 36px" >
+      {{model.name}}, Id={{ index }}</p>
+    </ng-template>
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{itemTemplate_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='itemTemplate_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='itemTemplate_list'
+          typeaheadOptionField="name"
+          [typeaheadItemTemplate]='ItemTemplate'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+
+  </div>
+  <div class='row justify-content-around section'>
+    <h3 id='list-templated-typeahead'>List Templated Typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#list-templated-typeahead">#</a>
+    </h3>
+  </div>
+  <div class='row justify-content-around section'>
+
+    <ng-template #ListTemplate let-matches="matches" let-query="query" let-typeaheadTemplateMethods>
+      <ul class="custom-list-group" [class.dropdown-menu]="isBs3">
+        <li class="custom-list-group-item"
+            *ngFor="let match of matches"
+            [class.active]="typeaheadTemplateMethods.isActive(match)"
+            (click)="typeaheadTemplateMethods.selectMatch(match, $event)"
+            (mouseenter)="typeaheadTemplateMethods.selectActive(match)">
+          {{ match.item }}
+        </li>
+      </ul>
+    </ng-template>
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{list_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='list_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          [optionsListTemplate]='ListTemplate'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+  <div class='row justify-content-around section'>
+    <h3>
+      Summary
+    </h3>
+
+  </div>
+
 </div>
