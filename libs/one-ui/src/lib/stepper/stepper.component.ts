@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { StepperStep, StepperType } from '../stepper.models';
+import { StepperStep, StepperType } from '../models/stepper.models';
 
 @Component({
   selector: 'rex-stepper',
@@ -12,7 +12,7 @@ export class StepperComponent {
   @Input() steps: Array<StepperStep> | undefined;
 
   @Output() stepClick = new EventEmitter<string>();
-  
+
   // Currently selected step's id value
   currentStepId = '';
 
@@ -31,7 +31,7 @@ export class StepperComponent {
   stepId(index: number): string {
     return `${(this.stepperId ? this.stepperId + '-' : '')}${this.steps ? this.steps[index].id : 'step'}-${index}`;
   }
-  
+
   /**
    * Compute the classes to be associated with a specific step
    * @param index position number of the step in the array
@@ -44,7 +44,7 @@ export class StepperComponent {
     const _stepClass = step ? `${step.id === this.currentStepId ? ' current': ''}` : ``;
     return `${this.type === StepperType.Horizontal ? this.type : ''} ${stepPosition} ${_stepClass}`;
   }
-  
+
   /**
    * Method to trigger the stepClick event
    * @param id string

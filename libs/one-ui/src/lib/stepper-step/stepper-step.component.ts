@@ -1,5 +1,5 @@
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
-import { StepperStep, StepperStepState, StepperType } from '../stepper.models';
+import { StepperStep, StepperStepState, StepperType } from '../models/stepper.models';
 
 @Component({
   selector: 'rex-stepper-step,[rexStepperStep]',

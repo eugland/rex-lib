@@ -1,0 +1,28 @@
+.bs-datepicker-container {
+  padding: 0;
+}
+
+.bs-datepicker-body td.week {
+  display: none;
+}
+
+.bs-datepicker-body table td{
+  color: $black;
+}
+
+.bs-datepicker-body th {
+  display: none;
+}
+
+.bs-datepicker-body th.weekday {
+  display: block;
+}
+
+.bs-datepicker-body table td.is-highlighted:not(.disabled):not(.selected) span,
+.bs-datepicker-body table td span.is-highlighted:not(.disabled):not(.selected) {
+  background-color: $gray-200;
+}
+
+.theme-green .bs-datepicker-head {
+  background-color: $blue;
+}

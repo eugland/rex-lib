@@ -34,3 +34,14 @@ nx run demo-ui-e2e:e2e
 
 ### Run e2e test for development purpose
 nx run demo-ui-e2e:e2e --watch
+
+## Migrate NX version
+nx migrate latest
+
+### Make sure to review package.json and verify the changes. Once changes to package.json is good
+npm install
+
+### Execute the migration
+nx migrate --run-migrations
+
+### Review application and when complete, remove migrations.json file and commit to git repository

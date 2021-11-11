@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { StepperStep, StepperStepState, StepperType } from '../stepper.models';
+import { StepperStep, StepperStepState, StepperType } from '../models/stepper.models';
 
 import { StepperStepComponent } from './stepper-step.component';
 

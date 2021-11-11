@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "projects": {
     "demo": {
@@ -18,7 +21,11 @@
             "tsConfig": "apps/demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "apps/demo/src/styles.scss"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": ["libs/one-ux"]
             },
@@ -123,7 +130,9 @@
             }
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": []
     },
     "demo-e2e": {
       "root": "apps/demo-e2e",
@@ -150,7 +159,9 @@
             "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["demo"]
     },
     "demo-ui": {
       "projectType": "library",
@@ -206,7 +217,8 @@
             }
           }
         }
-      }
+      },
+      "tags": []
     },
     "demo-ui-e2e": {
       "root": "apps/demo-ui-e2e",
@@ -232,7 +244,9 @@
             "lintFilePatterns": ["apps/demo-ui-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["demo-ui"]
     },
     "one-ui": {
       "projectType": "library",
@@ -305,7 +319,9 @@
             }
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["one-ux"]
     },
     "one-ui-e2e": {
       "root": "apps/one-ui-e2e",
@@ -331,7 +347,9 @@
             "lintFilePatterns": ["apps/one-ui-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["one-ui"]
     },
     "one-ux": {
       "projectType": "library",
@@ -372,40 +390,8 @@
             ]
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "analytics": false,
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
       },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
+      "tags": []
     }
-  },
-  "defaultProject": "demo"
+  }
 }
