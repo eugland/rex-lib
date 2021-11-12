@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { SIMPLE_TYPEAHEAD_DATA, ITEMTEMPLATE_DATA } from './typeaheads.data';
+import { SIMPLE_TYPEAHEAD_DATA, ITEMTEMPLATE_DATA, GROUPING_DATA } from './typeaheads.data';
 import { isBs3 } from 'ngx-bootstrap/utils';
+
 
 @Component({
   selector: 'rex-lib-typeaheads',
@@ -13,13 +14,20 @@ export class TypeaheadsComponent {
   model = '';
   simple_typeahead_list = SIMPLE_TYPEAHEAD_DATA;
   itemTemplate_list = ITEMTEMPLATE_DATA;
+  grouping_list = GROUPING_DATA;
+
   simple_typeahead_selected = '';
   animated_typeahead_select = '';
   adaptive_typeahead_select = '';
   itemTemplate_typeahead_selected = '';
   list_typeahead_selected = '';
+  grouping_typeahead_selected = '';
+  onthefly_grouping_typeahead_selected = '';
+
   isBs3 = isBs3();
 
+  convertToGroups = (list: string[]) => list
+    .map((item) => ({name: item, group: `Start with '${item.charAt(0).toUpperCase()}'` }));
 
   filterState = (text$: Observable<string>) =>
     text$.pipe(

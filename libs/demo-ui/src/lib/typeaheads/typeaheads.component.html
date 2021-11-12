@@ -127,8 +127,8 @@
   <div class='row justify-content-around section'>
 
     <ng-template #ListTemplate let-matches="matches" let-query="query" let-typeaheadTemplateMethods>
-      <ul class="custom-list-group" [class.dropdown-menu]="isBs3">
-        <li class="custom-list-group-item"
+      <ul class="list-group list-group-horizontal-md" [class.dropdown-menu]="isBs3">
+        <li class="list-group-item"
             *ngFor="let match of matches"
             [class.active]="typeaheadTemplateMethods.isActive(match)"
             (click)="typeaheadTemplateMethods.selectMatch(match, $event)"
@@ -152,11 +152,66 @@
       </div>
     </form>
   </div>
+
+
   <div class='row justify-content-around section'>
-    <h3>
-      Summary
+    <h3 id='grouping-typeahead'>
+      Grouping Results Typeahead.
+      <a routerlink="." class="anchor-link" href="/typeaheads#grouping-typeahead">#</a>
     </h3>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p><b><code>typeaheadGroupField: </code></b>The most straightforward method to achieve grouping is to have a (2+)
+      dimension array. The first field being the content to be displayed, and the second type being the group.
+      Specifiy field to be group by at <code>typeaheadGroupField</code>.
+    </p>
+
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{grouping_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='grouping_typeahead_selected'
+          [typeahead]='grouping_list'
+          [ngModelOptions]='{standalone: true}'
+          typeaheadOptionField='name'
+          typeaheadGroupField='region'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>If we do not have a group field but can quickly categorize the items from
+      the list, we can then create a local function to perform the
+      categorization and pass the mapped data to the typeahead.
+    </p>
+
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{onthefly_grouping_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='onthefly_grouping_typeahead_selected'
+          [typeahead]='convertToGroups(simple_typeahead_list)'
+          [ngModelOptions]='{standalone: true}'
+          typeaheadOptionField='name'
+          typeaheadGroupField='group'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>We can even create our own list rendering method. </p>
+
 
   </div>
+
 
 </div>
