@@ -27,7 +27,7 @@ export class TypeaheadsComponent {
   isBs3 = isBs3();
 
   convertToGroups = (list: string[]) => list
-    .map((item) => ({name: item, group: `Start with '${item.charAt(0).toUpperCase()}'` }));
+    .map((item) => ({name: item, group: `Start with '${item.charAt(0).toUpperCase()}':` }));
 
   filterState = (text$: Observable<string>) =>
     text$.pipe(

@@ -126,13 +126,13 @@
   </div>
   <div class='row justify-content-around section'>
 
-    <ng-template #ListTemplate let-matches="matches" let-query="query" let-typeaheadTemplateMethods>
+    <ng-template #ListTemplate let-matches="matches" let-query="query" let-tempFunc>
       <ul class="list-group list-group-horizontal-md" [class.dropdown-menu]="isBs3">
         <li class="list-group-item"
             *ngFor="let match of matches"
-            [class.active]="typeaheadTemplateMethods.isActive(match)"
-            (click)="typeaheadTemplateMethods.selectMatch(match, $event)"
-            (mouseenter)="typeaheadTemplateMethods.selectActive(match)">
+            [class.active]="tempFunc.isActive(match)"
+            (click)="tempFunc.selectMatch(match, $event)"
+            (mouseenter)="tempFunc.selectActive(match)">
           {{ match.item }}
         </li>
       </ul>
@@ -209,6 +209,38 @@
 
   <div class='row justify-content-around section'>
     <p>We can even create our own list rendering method. </p>
+
+    <div class='row justify-content-around section'>
+
+      <ng-template #GroupingListTemplate let-matches="matches" let-query="query" let-tempFunc>
+        <div [class.dropdown-menu]="isBs3">
+          <div class='list-group-item borderless'
+              *ngFor="let match of matches"
+               [ngClass]="match.item.hasOwnProperty('name') ? 'isitem' : 'groupheader'"
+               [class.active]="match.item.hasOwnProperty('name')? tempFunc.isActive(match): null"
+              (click)="match.item.hasOwnProperty('name') ? tempFunc.selectMatch(match, $event): null"
+              (mouseenter)="match.item.hasOwnProperty('name') ? tempFunc.selectActive(match): null">
+            {{ match.item.hasOwnProperty('name') ? match.item.name : match.item }}
+          </div>
+        </div>
+      </ng-template>
+
+      <form>
+        <div class='form-group'>
+          <pre class='card card-block card-header mb-3'> Modal: '{{list_typeahead_selected}}' </pre>
+          <input
+            [(ngModel)]='list_typeahead_selected'
+            [ngModelOptions]='{standalone: true}'
+            [typeahead]='convertToGroups(simple_typeahead_list)'
+            [optionsListTemplate]='GroupingListTemplate'
+            typeaheadOptionField='name'
+            typeaheadGroupField='group'
+            class='form-control'
+            type='text'
+          />
+        </div>
+      </form>
+    </div>
 
 
   </div>
