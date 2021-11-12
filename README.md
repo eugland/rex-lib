@@ -64,3 +64,6 @@ nx dep-graph
 
 ### To view affected:dep-graph
 nx affected:dep-graph
+
+## NPM Audit to make sure there are no vulnerabilities
+npm audit --production

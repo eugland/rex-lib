@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,20 +7,20 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./datepicker.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class DatepickerComponent implements OnInit {
+export class DatepickerComponent {
   @Input() minDate: Date | undefined;
   @Input() maxDate: Date | undefined;
   @Input() disabledDays: number[] | undefined;
-  @Input() isDisabled: boolean = false;
+  @Input() isDisabled = false;
   @Input() formGroup: FormGroup | undefined;
-  @Input() formControlName: string = '';
+  @Input() formControlName = '';
   @Input() id: string = this.formControlName;
 
-  ngOnInit() {
-  }
-
   public showError(): boolean {
-    // @ts-ignore
-    return this.formGroup.get(this.formControlName).status !== "VALID" && this.formGroup.get(this.formControlName).touched;
+    const ctrl = this.formGroup?.get(this.formControlName);
+    if (ctrl) {
+      return ctrl.status !== "VALID" && ctrl.touched;
+    }
+    return false;
   }
 }

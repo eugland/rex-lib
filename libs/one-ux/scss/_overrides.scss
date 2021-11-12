@@ -1,40 +1,19 @@
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 // Enable Fonts
 $font-onds-enabled: true !default;
 
-@if ($font-onds-enabled == true) {
-	$font-family-sans-serif: "Open Sans",Helvetica,Arial,sans-serif !default;
-	$font-family-base: $font-family-sans-serif !default;
-	$font-family-sans-serif-heading: "Raleway","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !default;
-}
-
-$font-family-base: "Open Sans",Helvetica,Arial,sans-serif !default;
 $font-family-sans-serif-heading: "Helvetica Neue",Helvetica,Arial,sans-serif !default;
-$font-family-sans-serif: "Open Sans",Helvetica,Arial,sans-serif !default ;
-
-//Enable icons
-$icons-core-enabled: true !default ;
-
-
-
-//Enable round button
-$rex-round-button-enabled: true !default;
-
-@if ($rex-round-button-enabled == true) {
-	$rex-round-button: 4px;
-	$rex-round-check: 0.25em;
-	$form-check-input-border-radius:          $rex-round-check;//.25em; 
-
-} @else {
-	$rex-round-button: 0px;
-	$rex-round-check: 0em;
-	$form-check-input-border-radius:          $rex-round-check;//.25em; 
+@if $font-onds-enabled {
+	$font-family-sans-serif-heading: "Raleway","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-@import "./scss/variables/typography";
-@import "./scss/variables/colours";
-@import "./scss/variables/checkboxes";
+// Enable icons
+$icons-core-enabled: true !default;
 
 // Maintain all bootstrap overrides in this file.
-@import "bootstrap_overrides";
+@import 'bootstrap_overrides';
+
+$rex-light-link-visited:	$purple !default;
+
+$rex-focus-transition: box-shadow 0.1s ease-in-out !default;

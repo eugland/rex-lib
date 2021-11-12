@@ -7,7 +7,7 @@
     foreground-color: $black,
     odd-row-background-color: $gray-100,
     selected-row-background-color: $gray-500,
-    row-border-color: $border-gray,
+    row-border-color: $gray-300,
     row-hover-color: null,
     checkbox-checked-color: #2661ad,
     range-selection-border-color: #ff00b1,
@@ -20,7 +20,7 @@
   ));
 
   .ag-root-wrapper {
-    border: 1px solid $border-gray; 
+    border: 1px solid $gray-300; 
   }
 
   .ag-cell-label-container.ag-header-cell-sorted-asc .ag-header-cell-text,
