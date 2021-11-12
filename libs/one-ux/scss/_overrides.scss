@@ -1,14 +1,6 @@
-// Custom Variables
+@import "bootstrap/scss/functions";
 
-//$rex-font-family-sans-serif-heading: "Raleway","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !default;
-
-// End of Custom Variables
-
-// Override default bootstrap fonts with fonts used by ONE DS 2.0
-//$font-family-sans-serif: "Open Sans",Helvetica,Arial,sans-serif !default;
-
-
-//Enable Fonts
+// Enable Fonts
 $font-onds-enabled: true !default;
 
 @if ($font-onds-enabled == true) {
@@ -40,8 +32,9 @@ $rex-round-button-enabled: true !default;
 	$form-check-input-border-radius:          $rex-round-check;//.25em; 
 }
 
-
-
 @import "./scss/variables/typography";
 @import "./scss/variables/colours";
 @import "./scss/variables/checkboxes";
+
+// Maintain all bootstrap overrides in this file.
+@import "bootstrap_overrides";
