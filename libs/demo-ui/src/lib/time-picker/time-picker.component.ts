@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'rex-lib-date-picker',
-  templateUrl: './date-picker.component.html',
+  templateUrl: './time-picker.component.html',
   styleUrls: ['./date-picker.component.scss']
 })
-export class DatePickerComponent implements OnInit {
+export class TimePickerComponent implements OnInit {
   public minDate: Date | undefined;
   public maxDate: Date |undefined;
   public isDisabled: boolean = false;
@@ -20,8 +20,7 @@ export class DatePickerComponent implements OnInit {
     this.minDate.setDate(this.minDate.getDate() - 1);
     this.maxDate.setDate(this.maxDate.getDate() + 40);
     this.datePickerFormGroup = this.fb.group({
-      date: ['', Validators.required],
-      dateRange: ['', Validators.required]
+      date: ['', Validators.required]
     });
   }
 

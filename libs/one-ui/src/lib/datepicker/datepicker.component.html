@@ -1,17 +1,42 @@
 <form *ngIf="formGroup" [formGroup]="formGroup">
-  <label [for]="id" class="mb-2">Enter a Date</label>
-  <div class="form-group">
+  <label [for]="id" class="fw-bold">{{label}}</label>
+  <div class="mb-1 datepicker-subtext">{{subLabel}}</div>
+  <div *ngIf="!rangepicker" class="form-group position-relative datepicker-container">
     <input type="text"
-           placeholder="Datepicker"
-           class="form-control date-input"
+           class="form-control date-input w-100"
+           #dp="bsDatepicker"
            bsDatepicker
            [minDate]="minDate"
            [maxDate]="maxDate"
-           [bsConfig]="{ adaptivePosition: true }"
+           [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD', adaptivePosition: true }"
            [isDisabled]="isDisabled === true"
            [daysDisabled]="disabledDays"
            [formControlName]="formControlName"
            [id]="id">
+    <button class="bg-transparent border-0 position-absolute pr-2 datepicker-button"
+            (click)="dp.show(); markformControlTouched()" [attr.aria-expanded]="dp.isOpen">
+      <span class="fal fa-calendar-alt"></span>
+    </button>
   </div>
-  <div *ngIf="showError()" class="error-message mt-2">Please enter a valid date</div>
+  <div *ngIf="rangepicker" class="position-relative daterangepicker-container">
+    <input type="text"
+           class="form-control date-input w-100"
+           #drp="bsDaterangepicker"
+           bsDaterangepicker
+           [minDate]="minDate"
+           [maxDate]="maxDate"
+           [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
+           [isDisabled]="isDisabled === true"
+           [daysDisabled]="disabledDays"
+           [formControlName]="formControlName"
+           [id]="id"
+           placement="bottom">
+    <button class="bg-transparent border-0 position-absolute pr-2 datepicker-button"
+            (click)="drp.show(); markformControlTouched()" [attr.aria-expanded]="drp.isOpen">
+      <span class="fal fa-calendar-alt"></span>
+    </button>
+  </div>
+  <div *ngIf="showError()" class="error-message mt-2">
+    <span class="fas fa-exclamation-triangle"></span><span class="ms-2">{{ errorMessage }}</span>
+  </div>
 </form>

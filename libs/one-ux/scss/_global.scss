@@ -1,246 +1,286 @@
-a{
-    text-decoration: underline;
+a {
+  text-decoration: underline;
 
-    &:visited {
-        color: $rex-light-link-visited;
-    }
-    &:hover{
-        color: $rex-light-link-hover;
-        text-decoration: $link-hover-decoration;
-    }
-    &:active{
-        color: $link-hover-color;
-    }
-    &:focus{
-        -moz-box-shadow: 0 0 0 4px $link-color;
-        -webkit-box-shadow: 0 0 0 4px $link-color;
-        box-shadow: 0 0 0 4px $link-color;        
-        outline: 4px solid transparent;
-        transition: all 0.1s ease-in-out;
-    }    
+  &:visited {
+    color: $rex-light-link-visited;
+  }
+
+  &:hover {
+    color: $rex-light-link-hover;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:active {
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    -moz-box-shadow: 0 0 0 4px $link-color;
+    -webkit-box-shadow: 0 0 0 4px $link-color;
+    box-shadow: 0 0 0 4px $link-color;
+    outline: 4px solid transparent;
+    transition: all 0.1s ease-in-out;
+  }
 
 }
+
 .btn {
-    border-radius: $rex-round-button; 
+  border-radius: $rex-round-button;
 }
 
-.btn-primary{
+.btn-primary {
+  color: $rex-btn-text-primary-light;
+
+  &:hover {
+    background-color: $rex-btn-bg-primary-hover;
     color: $rex-btn-text-primary-light;
 
-    &:hover{
-        background-color: $rex-btn-bg-primary-hover;
-        color: $rex-btn-text-primary-light;
-  
-    }
-    &:focus{
-        background-color: $rex-btn-bg-primary-hover;
-        transition: background-color .2s ease-out, $rex-focus-transition;
-        color: $rex-btn-text-primary-light;
-    }  
-    &:active{
-        background-color: $rex-btn-bg-primary-active;
-        transition: background-color 0s, $rex-focus-transition;
-        color: $rex-btn-text-primary-light;
+  }
 
-    }
-    &:disabled{
-        background-color: $rex-btn-bg-primary-disabled;
-        color: $rex-btn-text-primary-dark-disabled;
-        border: none;
-    }
+  &:focus {
+    background-color: $rex-btn-bg-primary-hover;
+    transition: background-color .2s ease-out, $rex-focus-transition;
+    color: $rex-btn-text-primary-light;
+  }
+
+  &:active {
+    background-color: $rex-btn-bg-primary-active;
+    transition: background-color 0s, $rex-focus-transition;
+    color: $rex-btn-text-primary-light;
+
+  }
+
+  &:disabled {
+    background-color: $rex-btn-bg-primary-disabled;
+    color: $rex-btn-text-primary-dark-disabled;
+    border: none;
+  }
 
 }
 
-.btn-outline-primary{
+.btn-outline-primary {
+  color: $rex-btn-text-primary-dark;
+
+  &:hover {
+    background-color: $rex-btn-bg-outline-primary-hover;
     color: $rex-btn-text-primary-dark;
 
-    &:hover{
-        background-color: $rex-btn-bg-outline-primary-hover;
-        color: $rex-btn-text-primary-dark;
-  
-    }
-    &:focus{
-        background-color: $rex-btn-bg-outline-primary-hover;
-        transition: background-color .2s ease-out, $rex-focus-transition;
-        color: $rex-btn-text-primary-dark;
-    }  
-    &:active{
-        background-color: $rex-btn-bg-outline-primary-active;
-        transition: background-color 0s, $rex-focus-transition;
-        color: $rex-btn-text-primary-dark;
-    }
-    &:disabled{
-        background-color: $rex-btn-bg-outline-disabled;
-        color: $rex-btn-text-outline-dark-disabled;
-        border: none;
-    }
+  }
 
-}
-.btn-link-primary{
+  &:focus {
+    background-color: $rex-btn-bg-outline-primary-hover;
+    transition: background-color .2s ease-out, $rex-focus-transition;
     color: $rex-btn-text-primary-dark;
-   
-    .disabled{
-        background-color: $rex-btn-bg-outline-disabled;
-        pointer-events: none;
-    }
+  }
 
-    &:hover{
-        background-color: $rex-btn-bg-outline-primary-hover;
-        color: $rex-btn-text-primary-dark;
- 
-  
-    }
-    &:focus{
-        background-color: $rex-btn-bg-outline-primary-hover;
-        transition: background-color .2s ease-out, $rex-focus-transition;
-        color: $rex-btn-text-primary-dark;
-    }  
-    &:active{
-        background-color: $rex-btn-bg-outline-primary-active;
-        transition: background-color 0s, $rex-focus-transition;
-        color: $rex-btn-text-primary-dark;
-     
-    }
+  &:active {
+    background-color: $rex-btn-bg-outline-primary-active;
+    transition: background-color 0s, $rex-focus-transition;
+    color: $rex-btn-text-primary-dark;
+  }
+
+  &:disabled {
+    background-color: $rex-btn-bg-outline-disabled;
+    color: $rex-btn-text-outline-dark-disabled;
+    border: none;
+  }
+
 }
 
-.btn-secondary{
+.btn-link-primary {
+  color: $rex-btn-text-primary-dark;
+
+  .disabled {
+    background-color: $rex-btn-bg-outline-disabled;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: $rex-btn-bg-outline-primary-hover;
+    color: $rex-btn-text-primary-dark;
+
+
+  }
+
+  &:focus {
+    background-color: $rex-btn-bg-outline-primary-hover;
+    transition: background-color .2s ease-out, $rex-focus-transition;
+    color: $rex-btn-text-primary-dark;
+  }
+
+  &:active {
+    background-color: $rex-btn-bg-outline-primary-active;
+    transition: background-color 0s, $rex-focus-transition;
+    color: $rex-btn-text-primary-dark;
+
+  }
+}
+
+.btn-secondary {
+  color: $rex-btn-text-secondary-light;
+
+  &:hover {
+    background-color: $rex-btn-bg-secondary-hover;
     color: $rex-btn-text-secondary-light;
 
-    &:hover{
-        background-color: $rex-btn-bg-secondary-hover;
-        color: $rex-btn-text-secondary-light;
-  
-    }
-    &:focus{
-        background-color: $rex-btn-bg-secondary-hover;
-        transition: background-color .2s ease-out, $rex-focus-transition;
-        color: $rex-btn-text-secondary-light;
-    }  
-    &:active{
-        background-color: $rex-btn-bg-secondary-active;
-        transition: background-color 0s, $rex-focus-transition;
-        color: $rex-btn-text-secondary-light;
+  }
 
-    }
-    &:disabled{
-        background-color: $rex-btn-bg-primary-disabled;
-        color: $rex-btn-text-primary-dark-disabled;
-        border: none;
-    }
+  &:focus {
+    background-color: $rex-btn-bg-secondary-hover;
+    transition: background-color .2s ease-out, $rex-focus-transition;
+    color: $rex-btn-text-secondary-light;
+  }
+
+  &:active {
+    background-color: $rex-btn-bg-secondary-active;
+    transition: background-color 0s, $rex-focus-transition;
+    color: $rex-btn-text-secondary-light;
+
+  }
+
+  &:disabled {
+    background-color: $rex-btn-bg-primary-disabled;
+    color: $rex-btn-text-primary-dark-disabled;
+    border: none;
+  }
 
 }
 
-.btn-outline-secondary{
+.btn-outline-secondary {
+  color: $rex-btn-text-secondary-dark;
+
+  &:hover {
+    background-color: $rex-btn-bg-outline-secondary-hover;
     color: $rex-btn-text-secondary-dark;
 
-    &:hover{
-        background-color: $rex-btn-bg-outline-secondary-hover;
-        color: $rex-btn-text-secondary-dark;
-  
-    }
-    &:focus{
-        background-color: $rex-btn-bg-outline-secondary-hover;
-        transition: background-color .2s ease-out, $rex-focus-transition;
-        color: $rex-btn-text-secondary-dark;
-    }  
-    &:active{
-        background-color: $rex-btn-bg-outline-secondary-active;
-        transition: background-color 0s, $rex-focus-transition;
-        color: $rex-btn-text-secondary-dark;
-    }
-    &:disabled{
-        background-color: $rex-btn-bg-outline-disabled;
-        color: $rex-btn-text-outline-dark-disabled;
-        border: none;
-    }
+  }
 
-}
-.btn-link-secondary{
+  &:focus {
+    background-color: $rex-btn-bg-outline-secondary-hover;
+    transition: background-color .2s ease-out, $rex-focus-transition;
     color: $rex-btn-text-secondary-dark;
-    .disabled{
-        background-color: $rex-btn-bg-outline-disabled;
-        pointer-events: none;
-    }
+  }
 
-    &:hover{
-        background-color: $rex-btn-bg-outline-secondary-hover;
-        color: $rex-btn-text-secondary-dark;
-      
-  
-    }
-    &:focus{
-        background-color: $rex-btn-bg-outline-secondary-hover;
-        transition: background-color .2s ease-out, $rex-focus-transition;
-        color: $rex-btn-text-secondary-dark;
-        
-    }  
-    &:active{
-        background-color: $rex-btn-bg-outline-secondary-active;
-        transition: background-color 0s, $rex-focus-transition;
-        color: $rex-btn-text-secondary-dark;
-       
-    }
+  &:active {
+    background-color: $rex-btn-bg-outline-secondary-active;
+    transition: background-color 0s, $rex-focus-transition;
+    color: $rex-btn-text-secondary-dark;
+  }
+
+  &:disabled {
+    background-color: $rex-btn-bg-outline-disabled;
+    color: $rex-btn-text-outline-dark-disabled;
+    border: none;
+  }
 
 }
 
-.form-check-input:checked[type=checkbox]{
-    &:hover{
-        background-color: $rex-primary-dark-1;
-    }
-    &:active{
-        background-color: $rex-primary-light-2;
-    }
-    &:disabled{
-        background-color: $rex-check-bg-checked-disabled;
-        color: $rexcheck-text-disabled;
-        border: none;
+.btn-link-secondary {
+  color: $rex-btn-text-secondary-dark;
 
-    }
+  .disabled {
+    background-color: $rex-btn-bg-outline-disabled;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: $rex-btn-bg-outline-secondary-hover;
+    color: $rex-btn-text-secondary-dark;
+
+
+  }
+
+  &:focus {
+    background-color: $rex-btn-bg-outline-secondary-hover;
+    transition: background-color .2s ease-out, $rex-focus-transition;
+    color: $rex-btn-text-secondary-dark;
+
+  }
+
+  &:active {
+    background-color: $rex-btn-bg-outline-secondary-active;
+    transition: background-color 0s, $rex-focus-transition;
+    color: $rex-btn-text-secondary-dark;
+
+  }
 
 }
 
-.form-check-input[type=checkbox]{
-    &:hover{
-        background-color: $rex-primary-light-1;
-    }
-    &:active{
-        background-color: $rex-primary-light-2;
-    }
-    &:disabled{
-        background-color: $rex-check-bg-disabled;
-        color: $rexcheck-text-disabled;     
-    }
+.form-check-input:checked[type=checkbox] {
+  &:hover {
+    background-color: $rex-primary-dark-1;
+  }
+
+  &:active {
+    background-color: $rex-primary-light-2;
+  }
+
+  &:disabled {
+    background-color: $rex-check-bg-checked-disabled;
+    color: $rexcheck-text-disabled;
+    border: none;
+
+  }
 
 }
-.form-check-input:checked[type=radio]{
+
+.form-check-input[type=checkbox] {
+  &:hover {
+    background-color: $rex-primary-light-1;
+  }
+
+  &:active {
+    background-color: $rex-primary-light-2;
+  }
+
+  &:disabled {
+    background-color: $rex-check-bg-disabled;
+    color: $rexcheck-text-disabled;
+  }
+
+}
+
+.form-check-input:checked[type=radio] {
+  background-color: $rex-light;
+
+  &:hover {
     background-color: $rex-light;
-    &:hover{
-        background-color: $rex-light;
-    }
-    &:active{
-        background-color: $rex-primary-light-2;
-    }
-    &:disabled{
-        background-color: $rex-check-bg-checked-disabled;
-        color: $rexcheck-text-disabled;
-        border: none;
+  }
 
-    }
+  &:active {
+    background-color: $rex-primary-light-2;
+  }
+
+  &:disabled {
+    background-color: $rex-check-bg-checked-disabled;
+    color: $rexcheck-text-disabled;
+    border: none;
+
+  }
 
 }
-.form-check-input[type=radio]{
-    background-color: $rex-light;
-    &:hover{
-        background-color: $rex-primary-light-1;
-    }
-    &:active{
-        background-color: $rex-primary-light-2;
-    }
-    &:disabled{
-        background-color: $rex-check-bg-disabled;
-        color: $rexcheck-text-disabled;     
-    }
 
+.form-check-input[type=radio] {
+  background-color: $rex-light;
+
+  &:hover {
+    background-color: $rex-primary-light-1;
+  }
+
+  &:active {
+    background-color: $rex-primary-light-2;
+  }
+
+  &:disabled {
+    background-color: $rex-check-bg-disabled;
+    color: $rexcheck-text-disabled;
+  }
+
+}
+
+.error-message {
+  color: $red;
+  font-size: 14px;
 }
 
 
