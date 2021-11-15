@@ -4,16 +4,9 @@ a {
   &:visited {
     color: $rex-light-link-visited;
   }
-
-  &:hover {
-    color: $rex-light-link-hover;
-    text-decoration: $link-hover-decoration;
-  }
-
   &:active {
     color: $link-hover-color;
   }
-
   &:focus {
     -moz-box-shadow: 0 0 0 4px $link-color;
     -webkit-box-shadow: 0 0 0 4px $link-color;
@@ -21,267 +14,204 @@ a {
     outline: 4px solid transparent;
     transition: all 0.1s ease-in-out;
   }
-
-}
-
-.btn {
-  border-radius: $rex-round-button;
 }
 
 .btn-primary {
-  color: $rex-btn-text-primary-light;
+  color: $white;
 
   &:hover {
-    background-color: $rex-btn-bg-primary-hover;
-    color: $rex-btn-text-primary-light;
-
+    background-color: $blue-dark;
+    color: $white;
   }
-
   &:focus {
-    background-color: $rex-btn-bg-primary-hover;
-    transition: background-color .2s ease-out, $rex-focus-transition;
-    color: $rex-btn-text-primary-light;
+    background-color: $blue-dark;
+    transition: background-color 0.2s ease-out, $rex-focus-transition;
+    color: $white;
   }
-
   &:active {
-    background-color: $rex-btn-bg-primary-active;
+    background-color: $indigo-medium;
     transition: background-color 0s, $rex-focus-transition;
-    color: $rex-btn-text-primary-light;
-
+    color: $white;
   }
-
   &:disabled {
-    background-color: $rex-btn-bg-primary-disabled;
-    color: $rex-btn-text-primary-dark-disabled;
+    background-color: $gray-300;
+    color: $gray-500;
     border: none;
   }
-
 }
 
 .btn-outline-primary {
-  color: $rex-btn-text-primary-dark;
+  color: $primary;
 
   &:hover {
-    background-color: $rex-btn-bg-outline-primary-hover;
-    color: $rex-btn-text-primary-dark;
-
+    background-color: $blue-light;
+    color: $primary;
   }
-
   &:focus {
-    background-color: $rex-btn-bg-outline-primary-hover;
-    transition: background-color .2s ease-out, $rex-focus-transition;
-    color: $rex-btn-text-primary-dark;
+    background-color: $blue-light;
+    transition: background-color 0.2s ease-out, $rex-focus-transition;
+    color: $primary;
   }
-
   &:active {
-    background-color: $rex-btn-bg-outline-primary-active;
+    background-color: $indigo-light;
     transition: background-color 0s, $rex-focus-transition;
-    color: $rex-btn-text-primary-dark;
+    color: $primary;
   }
-
   &:disabled {
-    background-color: $rex-btn-bg-outline-disabled;
-    color: $rex-btn-text-outline-dark-disabled;
+    background-color: $gray-100;
+    color: $gray-400;
     border: none;
   }
-
 }
-
 .btn-link-primary {
-  color: $rex-btn-text-primary-dark;
+  color: $primary;
 
   .disabled {
-    background-color: $rex-btn-bg-outline-disabled;
+    background-color: $gray-100;
     pointer-events: none;
   }
 
   &:hover {
-    background-color: $rex-btn-bg-outline-primary-hover;
-    color: $rex-btn-text-primary-dark;
-
-
+    background-color: $blue-light;
+    color: $primary;
   }
-
   &:focus {
-    background-color: $rex-btn-bg-outline-primary-hover;
-    transition: background-color .2s ease-out, $rex-focus-transition;
-    color: $rex-btn-text-primary-dark;
+    background-color: $blue-light;
+    transition: background-color 0.2s ease-out, $rex-focus-transition;
+    color: $primary;
   }
-
   &:active {
-    background-color: $rex-btn-bg-outline-primary-active;
+    background-color: $indigo-light;
     transition: background-color 0s, $rex-focus-transition;
-    color: $rex-btn-text-primary-dark;
-
+    color: $primary;
   }
 }
 
 .btn-secondary {
-  color: $rex-btn-text-secondary-light;
+  color: $white;
 
   &:hover {
-    background-color: $rex-btn-bg-secondary-hover;
-    color: $rex-btn-text-secondary-light;
-
+    background-color: $gray-800;
+    color: $white;
   }
-
   &:focus {
-    background-color: $rex-btn-bg-secondary-hover;
-    transition: background-color .2s ease-out, $rex-focus-transition;
-    color: $rex-btn-text-secondary-light;
+    background-color: $gray-800;
+    transition: background-color 0.2s ease-out, $rex-focus-transition;
+    color: $white;
   }
-
   &:active {
-    background-color: $rex-btn-bg-secondary-active;
+    background-color: $gray-700;
     transition: background-color 0s, $rex-focus-transition;
-    color: $rex-btn-text-secondary-light;
-
+    color: $white;
   }
-
   &:disabled {
-    background-color: $rex-btn-bg-primary-disabled;
-    color: $rex-btn-text-primary-dark-disabled;
+    background-color: $gray-300;
+    color: $gray-500;
     border: none;
   }
-
 }
 
 .btn-outline-secondary {
-  color: $rex-btn-text-secondary-dark;
+  color: $gray-700;
 
   &:hover {
-    background-color: $rex-btn-bg-outline-secondary-hover;
-    color: $rex-btn-text-secondary-dark;
-
+    background-color: $gray-200;
+    color: $gray-700;
   }
-
   &:focus {
-    background-color: $rex-btn-bg-outline-secondary-hover;
-    transition: background-color .2s ease-out, $rex-focus-transition;
-    color: $rex-btn-text-secondary-dark;
+    background-color: $gray-200;
+    transition: background-color 0.2s ease-out, $rex-focus-transition;
+    color: $gray-700;
   }
-
   &:active {
-    background-color: $rex-btn-bg-outline-secondary-active;
+    background-color: $gray-100;
     transition: background-color 0s, $rex-focus-transition;
-    color: $rex-btn-text-secondary-dark;
+    color: $gray-700;
   }
-
   &:disabled {
-    background-color: $rex-btn-bg-outline-disabled;
-    color: $rex-btn-text-outline-dark-disabled;
+    background-color: $gray-100;
+    color: $gray-400;
     border: none;
   }
-
 }
-
 .btn-link-secondary {
-  color: $rex-btn-text-secondary-dark;
-
+  color: $gray-700;
   .disabled {
-    background-color: $rex-btn-bg-outline-disabled;
+    background-color: $gray-100;
     pointer-events: none;
   }
 
   &:hover {
-    background-color: $rex-btn-bg-outline-secondary-hover;
-    color: $rex-btn-text-secondary-dark;
-
-
+    background-color: $gray-200;
+    color: $gray-700;
   }
-
   &:focus {
-    background-color: $rex-btn-bg-outline-secondary-hover;
-    transition: background-color .2s ease-out, $rex-focus-transition;
-    color: $rex-btn-text-secondary-dark;
-
+    background-color: $gray-200;
+    transition: background-color 0.2s ease-out, $rex-focus-transition;
+    color: $gray-700;
   }
-
   &:active {
-    background-color: $rex-btn-bg-outline-secondary-active;
+    background-color: $gray-100;
     transition: background-color 0s, $rex-focus-transition;
-    color: $rex-btn-text-secondary-dark;
-
+    color: $gray-700;
   }
-
 }
 
-.form-check-input:checked[type=checkbox] {
+.form-check-input:checked[type='checkbox'] {
   &:hover {
-    background-color: $rex-primary-dark-1;
+    background-color: $blue-dark;
   }
-
   &:active {
-    background-color: $rex-primary-light-2;
+    background-color: $indigo-light;
   }
-
   &:disabled {
-    background-color: $rex-check-bg-checked-disabled;
-    color: $rexcheck-text-disabled;
+    background-color: $gray-300;
+    color: $gray-400;
     border: none;
-
   }
-
 }
 
-.form-check-input[type=checkbox] {
+.form-check-input[type='checkbox'] {
   &:hover {
-    background-color: $rex-primary-light-1;
+    background-color: $blue-light;
   }
-
   &:active {
-    background-color: $rex-primary-light-2;
+    background-color: $indigo-light;
   }
-
   &:disabled {
-    background-color: $rex-check-bg-disabled;
-    color: $rexcheck-text-disabled;
+    background-color: $white;
+    color: $gray-400;
   }
-
 }
-
-.form-check-input:checked[type=radio] {
-  background-color: $rex-light;
-
+.form-check-input:checked[type='radio'] {
+  background-color: $white;
   &:hover {
-    background-color: $rex-light;
+    background-color: $white;
   }
-
   &:active {
-    background-color: $rex-primary-light-2;
+    background-color: $indigo-light;
   }
-
   &:disabled {
-    background-color: $rex-check-bg-checked-disabled;
-    color: $rexcheck-text-disabled;
+    background-color: $gray-300;
+    color: $gray-400;
     border: none;
-
   }
-
 }
-
-.form-check-input[type=radio] {
-  background-color: $rex-light;
-
+.form-check-input[type='radio'] {
+  background-color: $white;
   &:hover {
-    background-color: $rex-primary-light-1;
+    background-color: $blue-light;
   }
-
   &:active {
-    background-color: $rex-primary-light-2;
+    background-color: $indigo-light;
   }
-
   &:disabled {
-    background-color: $rex-check-bg-disabled;
-    color: $rexcheck-text-disabled;
+    background-color: $white;
+    color: $gray-400;
   }
-
 }
 
 .error-message {
   color: $red;
   font-size: 14px;
 }
-
-
-

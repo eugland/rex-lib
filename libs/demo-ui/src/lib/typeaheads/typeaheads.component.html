@@ -1,57 +1,249 @@
-<div class="container">
-  <div class="row">
-    <h1>Type Ahead</h1>
+<div class='container'>
+  <div class='row'>
+    <h1>Typeahead (WIP)</h1>
   </div>
 </div>
 <hr />
 
-<div class="container">
-  <div class="row justify-content-around">
-    <p>
-      <b>Simple Type Ahead: </b>A typeahead example that gets candidates from a
-      static input
+<div class='container'>
+  <div class='row justify-content-around section'>
+    <h3 id='simple-typeahead'>Simple Typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#simple-typeahead">#</a>
+    </h3>
+  </div>
+  <div class='row justify-content-around section'>
+
+
+   <p>
+      A simple typehead shows text candidates from a string array.
     </p>
+
     <form>
-      <div class="form-group">
-        <label for="typeahead-basic">Search for a state or province:</label>
+
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{simple_typeahead_selected}}' </pre>
         <input
-          class="in"
-          id="typeahead-basic"
-          type="text"
-          class="form-control"
-          [(ngModel)]="model"
-          [typeahead]="states"
-          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]='simple_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          class='form-control'
+          type='text'
         />
       </div>
     </form>
-    <p>Your Selected item: {{model}} </p>
 
 
-    <hr>
+
+  </div>
+
+  <div class='row justify-content-around section'>
+
     <p>
-      <b>Iconed Type Ahead: </b>A typeahead example that gets candidates from a
-      static input
+      <b>Animated </b> simple type ahead
     </p>
-
-    <hr>
-    <p><b>Self-built Typeahead: </b> this type ahead is self built, without the use
-      of any ngx-boostrap component. A self built typeahead gives us
-      greater flexibility in customizing</p>
     <form>
-      <div class="form-group">
-        <label for="typeahead-basic">Search for a state or province:</label>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{animated_typeahead_select}}' </pre>
+
         <input
-          class="in"
-          id="typeahead-basic"
-          type="text"
-          class="form-control"
-          [(ngModel)]="model"
-          [typeahead]="states"
-          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]='animated_typeahead_select'
+          [isAnimated]='true'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          class='form-control'
+          type='text'
         />
       </div>
     </form>
 
   </div>
+
+  <div class='row justify-content-around section'>
+
+    <p>
+      <b>Adaptive </b> simple type ahead: the dropdown may decide direction
+      of expansion according to list length adaptively.
+    </p>
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{adaptive_typeahead_select}}' </pre>
+        <input
+          [(ngModel)]='adaptive_typeahead_select'
+          [adaptivePosition]='true'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+
+  </div>
+
+
+
+
+  <br>
+
+  <div class='row justify-content-around section'>
+    <h3 id='item-templated-typeahead'>Item Templated Typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#item-templated-typeahead">#
+      </a>
+    </h3>
+  </div>
+  <div class='row justify-content-around section'>
+
+    <p>
+      The user will supply a Item template(<code>ng-template</code>) alongside the content list, the typeahead
+      component will automatically populate the item template by items from the
+      content list and display inflated items in the typeahead selection dropdown.
+    </p>
+    <ng-template #ItemTemplate let-model="item" let-index="index">
+      <p style='margin: 0'><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + model['flag']"  style="width: 36px" >
+      {{model.name}}, Id={{ index }}</p>
+    </ng-template>
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{itemTemplate_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='itemTemplate_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='itemTemplate_list'
+          typeaheadOptionField="name"
+          [typeaheadItemTemplate]='ItemTemplate'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+
+  </div>
+  <div class='row justify-content-around section'>
+    <h3 id='list-templated-typeahead'>List Templated Typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#list-templated-typeahead">#</a>
+    </h3>
+  </div>
+  <div class='row justify-content-around section'>
+
+    <ng-template #ListTemplate let-matches="matches" let-query="query" let-tempFunc>
+      <ul class="list-group list-group-horizontal-md" [class.dropdown-menu]="isBs3">
+        <li class="list-group-item"
+            *ngFor="let match of matches"
+            [class.active]="tempFunc.isActive(match)"
+            (click)="tempFunc.selectMatch(match, $event)"
+            (mouseenter)="tempFunc.selectActive(match)">
+          {{ match.item }}
+        </li>
+      </ul>
+    </ng-template>
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{list_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='list_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]='simple_typeahead_list'
+          [optionsListTemplate]='ListTemplate'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+
+  <div class='row justify-content-around section'>
+    <h3 id='grouping-typeahead'>
+      Grouping Results Typeahead.
+      <a routerlink="." class="anchor-link" href="/typeaheads#grouping-typeahead">#</a>
+    </h3>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p><b><code>typeaheadGroupField: </code></b>The most straightforward method to achieve grouping is to have a (2+)
+      dimension array. The first field being the content to be displayed, and the second type being the group.
+      Specifiy field to be group by at <code>typeaheadGroupField</code>.
+    </p>
+
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{grouping_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='grouping_typeahead_selected'
+          [typeahead]='grouping_list'
+          [ngModelOptions]='{standalone: true}'
+          typeaheadOptionField='name'
+          typeaheadGroupField='region'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>If we do not have a group field but can quickly categorize the items from
+      the list, we can then create a local function to perform the
+      categorization and pass the mapped data to the typeahead.
+    </p>
+
+
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{onthefly_grouping_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='onthefly_grouping_typeahead_selected'
+          [typeahead]='convertToGroups(simple_typeahead_list)'
+          [ngModelOptions]='{standalone: true}'
+          typeaheadOptionField='name'
+          typeaheadGroupField='group'
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>We can even create our own list rendering method. </p>
+
+    <div class='row justify-content-around section'>
+
+      <ng-template #GroupingListTemplate let-matches="matches" let-query="query" let-tempFunc>
+        <div [class.dropdown-menu]="isBs3">
+          <div class='list-group-item borderless'
+              *ngFor="let match of matches"
+               [ngClass]="match.item.hasOwnProperty('name') ? 'isitem' : 'groupheader'"
+               [class.active]="match.item.hasOwnProperty('name')? tempFunc.isActive(match): null"
+              (click)="match.item.hasOwnProperty('name') ? tempFunc.selectMatch(match, $event): null"
+              (mouseenter)="match.item.hasOwnProperty('name') ? tempFunc.selectActive(match): null">
+            {{ match.item.hasOwnProperty('name') ? match.item.name : match.item }}
+          </div>
+        </div>
+      </ng-template>
+
+      <form>
+        <div class='form-group'>
+          <pre class='card card-block card-header mb-3'> Modal: '{{list_typeahead_selected}}' </pre>
+          <input
+            [(ngModel)]='list_typeahead_selected'
+            [ngModelOptions]='{standalone: true}'
+            [typeahead]='convertToGroups(simple_typeahead_list)'
+            [optionsListTemplate]='GroupingListTemplate'
+            typeaheadOptionField='name'
+            typeaheadGroupField='group'
+            class='form-control'
+            type='text'
+          />
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+
+
 </div>

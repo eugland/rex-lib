@@ -1,68 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { SIMPLE_TYPEAHEAD_DATA, ITEMTEMPLATE_DATA, GROUPING_DATA } from './typeaheads.data';
+import { isBs3 } from 'ngx-bootstrap/utils';
 
-const states = [
-  'Alabama',
-  'Alaska',
-  'American Samoa',
-  'Arizona',
-  'Arkansas',
-  'California',
-  'Colorado',
-  'Connecticut',
-  'Delaware',
-  'District Of Columbia',
-  'Federated States Of Micronesia',
-  'Florida',
-  'Georgia',
-  'Guam',
-  'Hawaii',
-  'Idaho',
-  'Illinois',
-  'Indiana',
-  'Iowa',
-  'Kansas',
-  'Kentucky',
-  'Louisiana',
-  'Maine',
-  'Marshall Islands',
-  'Maryland',
-  'Massachusetts',
-  'Michigan',
-  'Minnesota',
-  'Mississippi',
-  'Missouri',
-  'Montana',
-  'Nebraska',
-  'Nevada',
-  'New Hampshire',
-  'New Jersey',
-  'New Mexico',
-  'New York',
-  'North Carolina',
-  'North Dakota',
-  'Northern Mariana Islands',
-  'Ohio',
-  'Oklahoma',
-  'Oregon',
-  'Palau',
-  'Pennsylvania',
-  'Puerto Rico',
-  'Rhode Island',
-  'South Carolina',
-  'South Dakota',
-  'Tennessee',
-  'Texas',
-  'Utah',
-  'Vermont',
-  'Virgin Islands',
-  'Virginia',
-  'Washington',
-  'West Virginia',
-  'Wisconsin',
-  'Wyoming',
-];
 
 @Component({
   selector: 'rex-lib-typeaheads',
@@ -71,7 +12,22 @@ const states = [
 })
 export class TypeaheadsComponent {
   model = '';
-  states = states;
+  simple_typeahead_list = SIMPLE_TYPEAHEAD_DATA;
+  itemTemplate_list = ITEMTEMPLATE_DATA;
+  grouping_list = GROUPING_DATA;
+
+  simple_typeahead_selected = '';
+  animated_typeahead_select = '';
+  adaptive_typeahead_select = '';
+  itemTemplate_typeahead_selected = '';
+  list_typeahead_selected = '';
+  grouping_typeahead_selected = '';
+  onthefly_grouping_typeahead_selected = '';
+
+  isBs3 = isBs3();
+
+  convertToGroups = (list: string[]) => list
+    .map((item) => ({name: item, group: `Start with '${item.charAt(0).toUpperCase()}':` }));
 
   filterState = (text$: Observable<string>) =>
     text$.pipe(
@@ -80,7 +36,7 @@ export class TypeaheadsComponent {
       map((searchTerm) =>
         searchTerm.length < 2
           ? []
-          : states
+          : this.simple_typeahead_list
               .filter(
                 (fromList) =>
                   fromList.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
