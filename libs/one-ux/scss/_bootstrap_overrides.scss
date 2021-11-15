@@ -36,77 +36,89 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:          #00b2e7 !default;
-$blue-light:    #f2fcfc !default;
-$blue-medium:   #62c9de !default;
-$blue-dark:     #006186 !default;
-$indigo:        #1080a6 !default;
-$indigo-light:  #e2f6f8 !default;
-$indigo-medium: #21a5cb !default;
-$indigo-dark:   #004763 !default;
-$purple:        #92278f !default;
-$purple-light:  #d939d5 !default;
-$pink:          #ed037c !default;
-$red:           #cd0000 !default;
-$red-light:     #fceff0 !default;
-$orange:        #f15a22 !default;
-$yellow:        #ffd440 !default;
-$yellow-light:  #fef6dc !default;
-$green:         #118847 !default;
-$green-light:   #e5f0e9 !default;
-$teal:          #49a7a2 !default;
-$cyan:          null !default;
-$disabled-color: $gray-500 !default; // TODO: Design System states it should be gray-200
+$blue:         #1080A6 !default;
+$indigo:       #6610f2 !default;
+$purple:       #6f42c1 !default;
+$pink:         #d63384 !default;
+$red:          #CD0000  !default;
+$orange:       #fd7e14 !default;
+$yellow:       #FFD440 !default;
+$green:        #118847  !default;
+$teal:         #20c997 !default;
+$cyan:         #693A77 !default;
+$gray:          $gray-600 !default;
+$gray-dark:     $gray-800 !default;
+$green-light:  #E5f0E9 !default;
+$red-light:    #FCEFF0 !default;
+$yellow-light: #FEF6DC !default;
+$blue-light-1: #F2FCFC !default;
+$blue-light-2: #E2F6F8 !default;
+$blue-dark-1:  #006186 !default;
+$blue-dark-2:  #004763 !default;
 // scss-docs-end color-variables
+$disabled-color: $gray-500 !default; // TODO: Design System states it should be gray-200
+
 
 // scss-docs-start colors-map
 $colors: (
   "blue":           $blue,
-  "blue-light":     $blue-light,
-  "blue-medium":    $blue-medium,
-  "blue-dark":      $blue-dark,
   "indigo":         $indigo,
-  "indigo-light":   $indigo-light,
-  "indigo-medium":  $indigo-medium,
-  "indigo-dark":    $indigo-dark,
   "purple":         $purple,
-  "purple-light":   $purple-light,
   "pink":           $pink,
   "red":            $red,
-  "red-light":      $red-light,
   "orange":         $orange,
   "yellow":         $yellow,
-  "yellow-light":   $yellow-light,
   "green":          $green,
-  "green-light":    $green-light,
   "teal":           $teal,
+  "cyan":           $cyan,
   "white":          $white,
   "gray":           $gray-600,
-  "gray-dark":      $gray-800
+  "gray-dark":      $gray-800,
+  "green-light":    $green-light,
+  "red-light":      $red-light,
+  "yellow-light":   $yellow-light,
+  "blue-light-1":   $blue-light-1,
+  "blue-light-2":   $blue-light-2,
+  "blue-dark-1":    $blue-dark-1,
+  "blue-dark-2":    $blue-dark-2
 ) !default;
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       $indigo !default;
-$secondary:     $gray-700 !default;
-$success:       $green !default;
-$info:          $indigo !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $blue-light !default;
-$dark:          $black !default;
+$primary:         $blue !default;
+$secondary:       $gray-700 !default;
+$success:         $green !default;
+$info:            $indigo !default;
+$warning:         $yellow !default;
+$danger:          $red !default;
+$light:           $white !default;
+$dark:            $black !default;
+$success-light:   $green-light !default;
+$warning-light:   $yellow-light !default;
+$danger-light:    $red-light !default;
+$primary-light-1: $blue-light-1 !default;
+$primary-light-2: $blue-light-2 !default;
+$primary-dark-1:  $blue-dark-1 !default;
+$primary-dark-2:  $blue-dark-2 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
+  "primary":          $primary,
+  "secondary":        $secondary,
+  "success":          $success,
+  "info":             $info,
+  "warning":          $warning,
+  "danger":           $danger,
+  "light":            $light,
+  "dark":             $dark,
+  "success-light":    $success-light,
+  "danger-light":     $danger-light,
+  "warning-light":    $warning-light,
+  "primary-light-1":  $primary-light-1,
+  "primary-light-2":  $primary-light-2,
+  "primary-dark-1":   $primary-dark-1,
+  "primary-dark-2":   $primary-dark-2,
 ) !default;
 // scss-docs-end theme-colors-map
 

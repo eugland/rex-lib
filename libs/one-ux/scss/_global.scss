@@ -20,16 +20,16 @@ a {
   color: $white;
 
   &:hover {
-    background-color: $blue-dark;
+    background-color: $primary-dark-1;
     color: $white;
   }
   &:focus {
-    background-color: $blue-dark;
+    background-color: $primary-dark-1;
     transition: background-color 0.2s ease-out, $rex-focus-transition;
     color: $white;
   }
   &:active {
-    background-color: $indigo-medium;
+    background-color: $primary-light-2;
     transition: background-color 0s, $rex-focus-transition;
     color: $white;
   }
@@ -44,16 +44,16 @@ a {
   color: $primary;
 
   &:hover {
-    background-color: $blue-light;
+    background-color: $primary-light-1;
     color: $primary;
   }
   &:focus {
-    background-color: $blue-light;
+    background-color: $primary-light-1;
     transition: background-color 0.2s ease-out, $rex-focus-transition;
     color: $primary;
   }
   &:active {
-    background-color: $indigo-light;
+    background-color: $primary-light-2;
     transition: background-color 0s, $rex-focus-transition;
     color: $primary;
   }
@@ -72,16 +72,16 @@ a {
   }
 
   &:hover {
-    background-color: $blue-light;
+    background-color: $primary-light-1;
     color: $primary;
   }
   &:focus {
-    background-color: $blue-light;
+    background-color: $primary-light-1;
     transition: background-color 0.2s ease-out, $rex-focus-transition;
     color: $primary;
   }
   &:active {
-    background-color: $indigo-light;
+    background-color: $primary-light-2;
     transition: background-color 0s, $rex-focus-transition;
     color: $primary;
   }
@@ -159,10 +159,10 @@ a {
 
 .form-check-input:checked[type='checkbox'] {
   &:hover {
-    background-color: $blue-dark;
+    background-color: $primary-dark-1;
   }
   &:active {
-    background-color: $indigo-light;
+    background-color: $primary-light-2;
   }
   &:disabled {
     background-color: $gray-300;
@@ -173,10 +173,10 @@ a {
 
 .form-check-input[type='checkbox'] {
   &:hover {
-    background-color: $blue-light;
+    background-color: $primary-light-1;
   }
   &:active {
-    background-color: $indigo-light;
+    background-color: $primary-light-2;
   }
   &:disabled {
     background-color: $white;
@@ -189,7 +189,7 @@ a {
     background-color: $white;
   }
   &:active {
-    background-color: $indigo-light;
+    background-color: $primary-light-2;
   }
   &:disabled {
     background-color: $gray-300;
@@ -200,10 +200,10 @@ a {
 .form-check-input[type='radio'] {
   background-color: $white;
   &:hover {
-    background-color: $blue-light;
+    background-color: $primary-light-1;
   }
   &:active {
-    background-color: $indigo-light;
+    background-color: $primary-light-2;
   }
   &:disabled {
     background-color: $white;
