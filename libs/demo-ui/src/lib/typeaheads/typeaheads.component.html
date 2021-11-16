@@ -210,8 +210,6 @@
   <div class='row justify-content-around section'>
     <p>We can even create our own list rendering method. </p>
 
-    <div class='row justify-content-around section'>
-
       <ng-template #GroupingListTemplate let-matches="matches" let-query="query" let-tempFunc>
         <div [class.dropdown-menu]="isBs3">
           <div class='list-group-item borderless'
@@ -240,10 +238,138 @@
           />
         </div>
       </form>
-    </div>
+
 
 
   </div>
 
+  <div class='row justify-content-around section'>
+    <h3 id='remote-typeahead'>
+      Getting live result from remote
+      <a routerlink="." class="anchor-link" href="/typeaheads#remote-typeahead">#</a>
+    </h3>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>Starts at 3 characters and 250ms deboucing. Use this method for larger query bodies. </p>
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{remote_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='remote_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]="suggestions$"
+          [typeaheadAsync]="true"
+          typeaheadOptionField="properties.formatted"
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>Start immediately, use it for string only query </p>
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{remote_short_typeahead_selected}}' </pre>
+        <input
+          [(ngModel)]='remote_short_typeahead_selected'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]="suggestions_short$"
+          [typeaheadAsync]="true"
+          typeaheadOptionField="properties.formatted"
+          class='form-control'
+          type='text'
+        />
+      </div>
+    </form>
+  </div>
+
+
+
 
 </div>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Footer Content</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
