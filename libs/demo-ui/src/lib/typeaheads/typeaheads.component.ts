@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { noop, Observable, Observer, of } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
@@ -33,7 +33,7 @@ export class TypeaheadsComponent implements OnInit {
   suggestions_short$?: Observable<any>
   isBs3 = isBs3();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private mock: TypeaheadDataService) {
 
   }
 
@@ -51,22 +51,15 @@ export class TypeaheadsComponent implements OnInit {
       observer.next(this.remote_typeahead_selected);
     }).pipe(
       switchMap((query: string) => {
-        if (query) {
-          return this.http.get<any>(
-            'https://api.geoapify.com/v1/geocode/search', {
-              params: {
-                apiKey: '8bbc9ec6b258472c994277633c3643de',
-                text: query
-              }
-            }).pipe(
-            map((data: any) => data && data.features || []),
-            tap((data) => noop, err => {
-              // in case of http error
-              this.errorMessage = err && err.message || 'Something goes wrong';
-            })
-          );
+        if (!query) {
+          return of([]);
         }
-        return of([]);
+        return this.mock.get_map(query).pipe(
+          map((data: any) => data && data.features || []),
+          tap((data) => noop, err => {
+            this.errorMessage = err && err.message || 'Something goes wrong';
+          })
+        );
       })
     );
   };
@@ -95,4 +88,27 @@ export class TypeaheadsComponent implements OnInit {
       })
     );
   };
+}
+
+@Injectable()
+export class TypeaheadDataService {
+  public constructor (private http: HttpClient) {
+
+
+  }
+  call(text: string, url: string, options: {params: HttpParams}) {
+
+  }
+  get_map(query: string): Observable<any>{
+    return this.http.get<any>(
+      'https://api.geoapify.com/v1/geocode/search', {
+        params: {
+          apiKey: '8bbc9ec6b258472c994277633c3643de',
+          text: query
+        }
+      }
+    );
+  }
+
+
 }
