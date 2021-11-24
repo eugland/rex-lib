@@ -1,10 +1,28 @@
 @import "../../../../one-ux/one-ux.scss";
-.error-message {
-  color: $red;
-  font-size: 14px;
+
+.datepicker-container {
+  max-width: 180px;
+}
+
+.daterangepicker-container {
+  max-width: 240px;
 }
 
 .date-input {
-  max-width: 280px;
-  width: 100%;
+  border: 1px solid $gray-700;
+}
+
+.datepicker-button {
+  top: 5px;
+  right: 0;
+}
+
+.datepicker-subtext {
+  font-size: 14px;
+  color: $gray-700;
+}
+
+.datepicker-button .fal {
+  color: $gray-700;
+  font-size: 25px;
 }
