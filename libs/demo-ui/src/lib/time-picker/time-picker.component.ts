@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'rex-lib-date-picker',
   templateUrl: './time-picker.component.html',
-  styleUrls: ['./date-picker.component.scss']
+  styleUrls: ['./time-picker.component.scss']
 })
 export class TimePickerComponent implements OnInit {
   public minDate: Date | undefined;
