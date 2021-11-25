@@ -265,6 +265,8 @@
           type='text'
         />
       </div>
+
+      <p *ngIf='errorMessage'> Error: {{ errorMessage  }}</p>
     </form>
   </div>
 
@@ -278,12 +280,48 @@
           [ngModelOptions]='{standalone: true}'
           [typeahead]="suggestions_short$"
           [typeaheadAsync]="true"
-          typeaheadOptionField="properties.formatted"
           class='form-control'
           type='text'
         />
       </div>
     </form>
+  </div>
+
+
+
+  <div class='row justify-content-around section'>
+    <h3 id='multiselect-typeahead'>
+      Multi-entry Select typeahead
+      <a routerlink="." class="anchor-link" href="/typeaheads#multiselect-typeahead">#</a>
+    </h3>
+  </div>
+
+  <div class='row justify-content-around section'>
+    <p>This is an example of a form that ask the user to type, and select
+      multiple keywords via a typeahead. The selected result is cached in a list
+      and displayed to the user. The user can remove the selected items in the
+      list by clicking the 'X' button.
+    </p>
+    <form>
+      <div class='form-group'>
+        <pre class='card card-block card-header mb-3'> Modal: '{{multi_select}}' </pre>
+        <input
+          [(ngModel)]='multi_select'
+          [ngModelOptions]='{standalone: true}'
+          [typeahead]="multi_typeahead_list"
+          (typeaheadOnSelect)='multi_add($event)'
+          class='form-control'
+          type='text'
+        />
+
+      </div>
+    </form>
+    <div>
+      <div *ngFor='let it of multi_list' class='css-box' >
+        <button class='btn btn-block btn-' (click)='multi_del(it)'>X</button>
+        <div style='margin: 10px 5px'>{{ it }} </div>
+      </div>
+    </div>
   </div>
 
 
@@ -366,8 +404,8 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://mdbootstrap.com/"> ontariohealth.ca</a>
   </div>
   <!-- Copyright -->
 

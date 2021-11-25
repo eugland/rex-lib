@@ -1,9 +1,10 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { noop, Observable, Observer, of } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { GROUPING_DATA, ITEMTEMPLATE_DATA, SIMPLE_TYPEAHEAD_DATA } from './typeaheads.data';
 import { isBs3 } from 'ngx-bootstrap/utils';
+import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 
 
 @Component({
@@ -33,7 +34,12 @@ export class TypeaheadsComponent implements OnInit {
   suggestions_short$?: Observable<any>
   isBs3 = isBs3();
 
-  constructor(private http: HttpClient, private mock: TypeaheadDataService) {
+  multi_select = ''
+  multi_list = ['pre-added content']
+
+  multi_typeahead_list = this.simple_typeahead_list.slice();
+
+  constructor(private http: HttpClient) {
 
   }
 
@@ -46,69 +52,68 @@ export class TypeaheadsComponent implements OnInit {
     .map((item) => ({ name: item, group: `Start with '${item.charAt(0).toUpperCase()}':` }));
 
 
-  getSuggestions = () => {
+  getSuggestions() {
     return new Observable((observer: Observer<string | undefined>) => {
       observer.next(this.remote_typeahead_selected);
     }).pipe(
       switchMap((query: string) => {
-        if (!query) {
-          return of([]);
-        }
-        return this.mock.get_map(query).pipe(
-          map((data: any) => data && data.features || []),
+        if (!query) return of([]);
+        return this.http.get<{features:[]}>(
+          'https://api.geoapify.com/v1/geocode/search', {
+            params: {
+              apiKey: '8bbc9ec6b258472c994277633c3643de',
+              text: query
+            }
+          }
+        ).pipe(
+          map((data: {features: []}) => data && data.features || []),
           tap((data) => noop, err => {
             this.errorMessage = err && err.message || 'Something goes wrong';
-          })
+          }),
         );
       })
     );
   };
 
-  get_suggestions_short = () => {
+  get_suggestions_short() {
     return new Observable((observer: Observer<string | undefined>) => {
-      observer.next(this.remote_typeahead_selected);
+      observer.next(this.remote_short_typeahead_selected);
     }).pipe(
       switchMap((query: string) => {
-        if (query) {
-          return this.http.get<any>(
-            'https://en.wikipedia.org/w/api.php', {
-              params: {
-                apiKey: '8bbc9ec6b258472c994277633c3643de',
-                text: query
-              }
-            }).pipe(
-            map((data: any) => data && data.features || []),
-            tap((data) => noop, err => {
-              // in case of http error
-              this.errorMessage = err && err.message || 'Something goes wrong';
-            })
-          );
-        }
-        return of([]);
+        if (!query) return of([]);
+        return this.http.get<[string, []]>(
+          'https://en.wikipedia.org/w/api.php', {
+            params: {
+              action: "opensearch",
+              limit: "8",
+              format: "json",
+              origin: "*",
+              search: query
+            }
+          }).pipe(
+          map((data: [string, []]) => data && data[1] || [])
+        );
       })
     );
   };
+
+  multi_add(event: TypeaheadMatch) {
+    console.log(`multi_add ${event}`)
+    this.multi_list.push(event.item);
+    this.multi_typeahead_list = this.multi_typeahead_list
+      .filter((s)=> s != event.item)
+    // multi_select  and event item could be different for example, one could
+    // have selected a candidate word and quickly typed in something else
+    // we want to reset the component, and not the passed in checked value.
+    this.multi_select = ''
+  }
+
+  multi_del(item: string) {
+    console.log(`multi_del ${item}`)
+    this.multi_list = this.multi_list.filter((s) => s!= item);
+    this.multi_typeahead_list.push(item)
+  }
+
 }
 
-@Injectable()
-export class TypeaheadDataService {
-  public constructor (private http: HttpClient) {
 
-
-  }
-  call(text: string, url: string, options: {params: HttpParams}) {
-
-  }
-  get_map(query: string): Observable<any>{
-    return this.http.get<any>(
-      'https://api.geoapify.com/v1/geocode/search', {
-        params: {
-          apiKey: '8bbc9ec6b258472c994277633c3643de',
-          text: query
-        }
-      }
-    );
-  }
-
-
-}
