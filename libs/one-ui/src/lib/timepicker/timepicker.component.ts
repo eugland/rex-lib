@@ -25,8 +25,8 @@ export class TimepickerComponent implements OnInit {
   @Input() readonly: boolean = false;
   @Input() showMinutes: any = true;
   @Input() showSeconds: any = false;
-  @Input() minTime: Date | null = null;
-  @Input() maxTime: Date | null = null;
+  @Input() minTime: Date | undefined = undefined;
+  @Input() maxTime: Date | undefined = undefined;
   @Input() showMeridian = false;
   @Output() valid = new EventEmitter<Event>();
 
