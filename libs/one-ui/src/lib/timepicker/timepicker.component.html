@@ -4,6 +4,16 @@
 
   <timepicker
     [formControlName]="formControlName"
+    [hoursPlaceholder]="hoursPlaceholder"
+    [minutesPlaceholder]="minutesPlaceholder"
+    [arrowkeys]="allowArrowKeys"
+    [min]="minTime"
+    [max]="maxTime"
+    [showMeridian]="showMeridian"
+    [readonlyInput]="readonly"
+    (isValid)="isValid($event)"
+    [showMinutes]="showMinutes"
+    [showSeconds]="showSeconds"
   ></timepicker>
 
   <div *ngIf="showError()" class="error-message mt-2">

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -19,6 +19,16 @@ export class TimepickerComponent implements OnInit {
   @Input() id: string = this.formControlName;
   @Input() rangepicker: boolean = false;
   @Input() errorMessage: string = 'This field is required';
+  @Input() hoursPlaceholder: string = '';
+  @Input() minutesPlaceholder: string = '';
+  @Input() allowArrowKeys = true;
+  @Input() readonly: boolean = false;
+  @Input() showMinutes: any = true;
+  @Input() showSeconds: any = false;
+  @Input() minTime: Date | null = null;
+  @Input() maxTime: Date | null = null;
+  @Input() showMeridian = false;
+  @Output() valid = new EventEmitter<Event>();
 
   ngOnInit() {
   }
@@ -30,5 +40,9 @@ export class TimepickerComponent implements OnInit {
 
   public markformControlTouched(): void {
     this.formGroup?.get(this.formControlName)?.markAsTouched();
+  }
+
+  isValid($event: boolean) {
+    this.valid.emit(event);
   }
 }
