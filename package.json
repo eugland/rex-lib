@@ -11,7 +11,8 @@
     "docs:json": "compodoc -p ./tsconfig.base.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "build-prod": "nx build --configuration=production"
+    "build-prod": "nx build --configuration=production",
+    "serve-demo": "ng serve demo"
   },
   "private": true,
   "dependencies": {
