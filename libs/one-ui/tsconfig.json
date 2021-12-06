@@ -20,7 +20,8 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
