@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TimePickerComponent } from './date-picker.component';
+import { TimePickerComponent } from './time-picker.component';
 
 const routes: Routes = [{ path: '', component: TimePickerComponent }];
 

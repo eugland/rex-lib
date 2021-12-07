@@ -5,23 +5,30 @@ import { StepperComponent } from './stepper/stepper.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { TimepickerComponent } from './timepicker/timepicker.component';
+import { RexTabsModule } from './tabs';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
-    ReactiveFormsModule
+    TimepickerModule.forRoot(),
+    ReactiveFormsModule,
+    RexTabsModule
   ],
   declarations: [
     StepperStepComponent,
     StepperComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    TimepickerComponent
   ],
   exports: [
     StepperStepComponent,
     StepperComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    TimepickerComponent
   ]
 })
 export class OneUIModule {

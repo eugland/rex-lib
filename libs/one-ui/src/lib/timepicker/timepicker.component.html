@@ -1,17 +1,22 @@
 <form *ngIf="formGroup" [formGroup]="formGroup">
-  <label [for]="id" class="mb-2">Enter a Date</label>
-  <div class="form-group">
-    <input type="text"
-           placeholder="Datepicker"
-           class="form-control date-input"
-           bsDatepicker
-           [minDate]="minDate"
-           [maxDate]="maxDate"
-           [bsConfig]="{ adaptivePosition: true }"
-           [isDisabled]="isDisabled === true"
-           [daysDisabled]="disabledDays"
-           [formControlName]="formControlName"
-           [id]="id">
+  <label [for]="id" class="fw-bold">{{label}}</label>
+  <div class="mb-1 datepicker-subtext">{{subLabel}}</div>
+
+  <timepicker
+    [formControlName]="formControlName"
+    [hoursPlaceholder]="hoursPlaceholder"
+    [minutesPlaceholder]="minutesPlaceholder"
+    [arrowkeys]="allowArrowKeys"
+    [min]="minTime"
+    [max]="maxTime"
+    [showMeridian]="showMeridian"
+    [readonlyInput]="readonly"
+    (isValid)="isValid($event)"
+    [showMinutes]="showMinutes"
+    [showSeconds]="showSeconds"
+  ></timepicker>
+
+  <div *ngIf="showError()" class="error-message mt-2">
+    <span class="fas fa-exclamation-triangle"></span><span class="ms-2">{{ errorMessage }}</span>
   </div>
-  <div *ngIf="showError()" class="error-message mt-2">Please enter a valid date</div>
 </form>

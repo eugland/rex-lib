@@ -1,0 +1,20 @@
+<tabset *ngIf="tabs.length > 0"
+    [type]="type"
+    [justified]="justified"
+    [vertical]="vertical">
+    <ng-container *ngFor="let tab of tabs">
+        <tab 
+            [id]="tab.id"
+            [heading]="!tab.useHeadingTemplate ? tab.heading: ''"
+            [active]="tab.active"
+            (selectTab)="onSelect($event)"
+            (deselect)="!tab.active"
+            [disabled]="!!tab.disabled"
+            [removable]="!!tab.removable"
+            [customClass]="tab.customClass"
+        >
+            <ng-template tabHeading><div *ngIf="tab.useHeadingTemplate" [innerHTML]="tab.heading"></div></ng-template>
+            {{tab?.content}}
+        </tab>
+    </ng-container>
+</tabset>

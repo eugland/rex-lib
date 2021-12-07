@@ -1,0 +1,46 @@
+@import "../../../../one-ux/one-ux.scss";
+.rex-tabs {
+    .nav {
+        gap: 2px;
+    }
+    .nav-item {
+        &.customClass {
+            text-align: center !important;  
+        }        
+        .nav-link {
+            border-radius: 0;
+            border-bottom: 1px solid $gray-300;
+            color: $gray-700;
+            background-color: $white;
+            font: normal normal 600 16px/24px Open Sans;
+            &:hover {
+                box-shadow: 0 0 0 0px $blue;
+                outline: 0px solid transparent;
+                border-bottom: solid 2px $blue;
+                color: $blue-dark-1;
+                background-color: $blue-light-1;
+            }            
+            &:focus {
+                box-shadow: 0 0 0 2px $blue;
+                outline: 2px solid transparent;
+                color: $blue-dark-1;
+                background-color: $white;
+            }
+            &:active {
+                box-shadow: 0 0 0 0px $blue;
+                outline: 0px solid transparent;
+                border-bottom: solid 2px #62C9DE;
+                color: $blue;
+                background-color: $blue-light-2;
+            }
+            &.active {
+                box-shadow: 0 0 0 0px $blue;
+                outline: 0px solid transparent;
+                border: none;
+                border-bottom: solid 2px $blue;
+                color: $blue;
+                background-color: $white;
+            }
+        }
+    }  
+}

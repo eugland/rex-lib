@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <h1>Tabs</h1>
+    </div>
+</div>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <h2>Basic Tabs</h2>
+        <div class="bd-example">
+            <rex-tabs [tabs]="tabs"></rex-tabs>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Justified Tabs</h2>
+        <div class="bd-example">
+            <rex-tabs [tabs]="tabs" [justified]="justified"></rex-tabs>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Vertical Tabs</h2>
+        <div class="bd-example">
+            <rex-tabs [tabs]="tabs" [vertical]="vertical"></rex-tabs>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Pills</h2>
+        <div class="bd-example">
+            <rex-tabs [tabs]="tabs" [type]="'pills'"></rex-tabs>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Heading Template</h2>
+        <div class="bd-example">
+            <rex-tabs [tabs]="tabs2"></rex-tabs>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Custom Class</h2>
+        <div class="bd-example">
+            <div class="info">
+                <div class="info-message"><strong>Info:</strong> {{info}}</div>
+            </div>
+            <rex-tabs [tabs]="tabs3" (selected)="onSelect($event)"></rex-tabs>
+        </div>
+    </div>
+</div>
+<br><br><br><br>

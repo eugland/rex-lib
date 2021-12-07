@@ -1,6 +1,7 @@
 <form *ngIf="formGroup" [formGroup]="formGroup">
   <label [for]="id" class="fw-bold">{{label}}</label>
   <div class="mb-1 datepicker-subtext">{{subLabel}}</div>
+
   <div *ngIf="!rangepicker" class="form-group position-relative datepicker-container">
     <input type="text"
            class="form-control date-input w-100"
@@ -18,6 +19,7 @@
       <span class="fal fa-calendar-alt"></span>
     </button>
   </div>
+
   <div *ngIf="rangepicker" class="position-relative daterangepicker-container">
     <input type="text"
            class="form-control date-input w-100"
@@ -36,6 +38,7 @@
       <span class="fal fa-calendar-alt"></span>
     </button>
   </div>
+
   <div *ngIf="showError()" class="error-message mt-2">
     <span class="fas fa-exclamation-triangle"></span><span class="ms-2">{{ errorMessage }}</span>
   </div>

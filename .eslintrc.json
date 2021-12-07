@@ -24,7 +24,9 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-inferrable-types": 1 // 0: off, 1: warn, 2: error
+      }
     },
     {
       "files": ["*.js", "*.jsx"],

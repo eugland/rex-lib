@@ -1,10 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TimePickerRoutingModule } from './time-picker-routing.module';
-import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
-import { TimePickerComponent } from './date-picker.component';
 import { OneUIModule } from '@rex-lib/one-ui';
+import { TimePickerComponent } from './time-picker.component';
 
 @NgModule({
   imports: [
@@ -12,6 +10,7 @@ import { OneUIModule } from '@rex-lib/one-ui';
     HttpClientModule,
     OneUIModule
   ],
-  declarations: [TimePickerComponent],
+  declarations: [TimePickerComponent]
 })
-export class TimePickerModule {}
+export class TimePickerModule {
+}

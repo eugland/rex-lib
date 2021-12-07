@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  environment: "LOCAL",
+  //APP_STAGE: window["env"] ? window["env"]["APP_STAGE"] : "localdev" ,
 };
 
 /*

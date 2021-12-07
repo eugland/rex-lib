@@ -1,12 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class=""col-12>
-      <h1 class="mb-3">Date Picker</h1>
-      <rex-lib-datepicker [minDate] = "minDate"
-                          [maxDate] = "maxDate"
-                          [isDisabled] = "isDisabled"
-                          [formGroup]="datePickerFormGroup"
-                          formControlName="date"></rex-lib-datepicker>
+    <h1 id="links">Time Picker (WIP)</h1>
+  </div>
+</div>
+
+<hr />
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12" >
+      <rex-timepicker [formGroup]="datePickerFormGroup"
+                      formControlName="date">
+
+      </rex-timepicker>
     </div>
   </div>
 </div>
