@@ -99,8 +99,10 @@
       content list and display inflated items in the typeahead selection dropdown.
     </p>
     <ng-template #ItemTemplate let-model="item" let-index="index">
-      <p style='margin: 0'><img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + model['flag']"  style="width: 36px" >
-      {{model.name}}, Id={{ index }}</p>
+      <p style='margin: 0'>
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + model['flag']"  style="width: 36px" >
+      {{model.name}}, Id={{ index }}
+      </p>
     </ng-template>
 
     <form>
@@ -283,6 +285,7 @@
           class='form-control'
           type='text'
         />
+
       </div>
     </form>
   </div>

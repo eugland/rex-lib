@@ -5,6 +5,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { GROUPING_DATA, ITEMTEMPLATE_DATA, SIMPLE_TYPEAHEAD_DATA } from './typeaheads.data';
 import { isBs3 } from 'ngx-bootstrap/utils';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -75,7 +76,11 @@ export class TypeaheadsComponent implements OnInit {
     );
   };
 
+
+  cache = new Map<string, string[]>();
+
   get_suggestions_short() {
+
     return new Observable((observer: Observer<string | undefined>) => {
       observer.next(this.remote_short_typeahead_selected);
     }).pipe(
@@ -91,7 +96,16 @@ export class TypeaheadsComponent implements OnInit {
               search: query
             }
           }).pipe(
-          map((data: [string, []]) => data && data[1] || [])
+          map((data: [string, []]) => {
+            this.cache.set(query, data[1])
+            return data[1]
+          }),
+          catchError(err => {
+            if (this.cache.has(query)) {
+              return of(this.cache.get(query));
+            }
+            return of();
+          })
         );
       })
     );
