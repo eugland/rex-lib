@@ -1,51 +1,78 @@
 <ng-template #simple>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
+  <div class='modal-header'>
+    <h4 class='modal-title pull-left'>Modal</h4>
+    <button (click)='modalRef?.hide()' aria-label='Close' class='btn-close close pull-right' type='button'>
+      <span aria-hidden='true' class='visually-hidden'>&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class='modal-body'>
     This is a modal.
   </div>
 </ng-template>
 
 <ng-template #long>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
+  <div class='modal-header'>
+    <h4 class='modal-title pull-left'>Modal</h4>
+    <button (click)='modalRef?.hide()' aria-label='Close' class='btn-close close pull-right' type='button'>
+      <span aria-hidden='true' class='visually-hidden'>&times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec blandit felis, et imperdiet quam. Nam laoreet hendrerit dui ac mattis. Suspendisse id magna id libero fringilla varius. Nulla finibus quam in ligula elementum ornare at in massa. Maecenas sed massa est. Aenean hendrerit ultrices tellus, nec sagittis est tincidunt quis. Morbi ornare aliquet tempor. Mauris sed urna ut magna ultricies vestibulum vel vitae ipsum. Aliquam sit amet luctus ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eget ante vel odio euismod finibus vel a velit. Pellentesque dictum ligula mi, ut lobortis libero commodo vehicula. Aenean at est risus. Proin dapibus bibendum aliquam.
+  <div class='modal-body'>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec blandit felis, et imperdiet quam. Nam laoreet
+    hendrerit dui ac mattis. Suspendisse id magna id libero fringilla varius. Nulla finibus quam in ligula elementum
+    ornare at in massa. Maecenas sed massa est. Aenean hendrerit ultrices tellus, nec sagittis est tincidunt quis. Morbi
+    ornare aliquet tempor. Mauris sed urna ut magna ultricies vestibulum vel vitae ipsum. Aliquam sit amet luctus ante.
+    Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eget ante vel odio euismod finibus vel a
+    velit. Pellentesque dictum ligula mi, ut lobortis libero commodo vehicula. Aenean at est risus. Proin dapibus
+    bibendum aliquam.
 
-    Nullam scelerisque sed massa vel pellentesque. Nullam eu massa ligula. Donec quis quam non dolor viverra euismod. Aliquam eu facilisis ipsum. Aliquam vel neque sit amet augue vestibulum scelerisque a vitae nisi. Aenean commodo euismod fermentum. Ut ac eros quam. Nam et elementum risus. Vestibulum vulputate lobortis nisl, vel malesuada urna pellentesque eu. Etiam id est ornare, laoreet nibh in, sodales tortor. Maecenas imperdiet, turpis eget auctor tincidunt, risus nibh lobortis urna, et fermentum ex justo eu elit. Nunc sollicitudin quam tellus, at vestibulum metus sollicitudin eu. Aenean posuere, urna sit amet sodales ultrices, lacus leo vehicula nisi, vitae hendrerit ex urna nec eros. Pellentesque ullamcorper mi eget imperdiet pretium.
+    Nullam scelerisque sed massa vel pellentesque. Nullam eu massa ligula. Donec quis quam non dolor viverra euismod.
+    Aliquam eu facilisis ipsum. Aliquam vel neque sit amet augue vestibulum scelerisque a vitae nisi. Aenean commodo
+    euismod fermentum. Ut ac eros quam. Nam et elementum risus. Vestibulum vulputate lobortis nisl, vel malesuada urna
+    pellentesque eu. Etiam id est ornare, laoreet nibh in, sodales tortor. Maecenas imperdiet, turpis eget auctor
+    tincidunt, risus nibh lobortis urna, et fermentum ex justo eu elit. Nunc sollicitudin quam tellus, at vestibulum
+    metus sollicitudin eu. Aenean posuere, urna sit amet sodales ultrices, lacus leo vehicula nisi, vitae hendrerit ex
+    urna nec eros. Pellentesque ullamcorper mi eget imperdiet pretium.
 
-    Sed a justo ut eros egestas pretium. Nam sapien magna, ultrices sit amet egestas eu, mollis non sapien. Proin malesuada nisl et vehicula condimentum. Nulla facilisis mattis metus ac rutrum. Nunc sit amet euismod urna. Phasellus in laoreet mi. Integer pharetra leo vel laoreet lacinia. Etiam egestas risus sed consequat pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam a turpis feugiat metus malesuada ornare a id elit. Vestibulum ultrices sem ex, sit amet molestie ligula varius ut. Phasellus sagittis eros tellus, eu pharetra sem eleifend ut. Quisque a velit justo.
+    Sed a justo ut eros egestas pretium. Nam sapien magna, ultrices sit amet egestas eu, mollis non sapien. Proin
+    malesuada nisl et vehicula condimentum. Nulla facilisis mattis metus ac rutrum. Nunc sit amet euismod urna.
+    Phasellus in laoreet mi. Integer pharetra leo vel laoreet lacinia. Etiam egestas risus sed consequat pulvinar. Orci
+    varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam a turpis feugiat metus
+    malesuada ornare a id elit. Vestibulum ultrices sem ex, sit amet molestie ligula varius ut. Phasellus sagittis eros
+    tellus, eu pharetra sem eleifend ut. Quisque a velit justo.
 
-    Pellentesque dignissim urna nulla, non volutpat enim feugiat bibendum. Nullam sed tempus augue. Praesent quis augue malesuada, lacinia risus tempor, venenatis metus. Morbi ac mi ut dui bibendum rhoncus quis sed ex. Cras accumsan orci ut tristique mollis. Nunc quam purus, dictum non molestie eget, maximus sed risus. Etiam neque tortor, dapibus eget ultrices vel, luctus eget ex. Quisque posuere tempus leo quis tristique. In aliquet nulla et sodales pharetra. Nullam ut nunc mattis, sagittis nisl ut, scelerisque nulla.
+    Pellentesque dignissim urna nulla, non volutpat enim feugiat bibendum. Nullam sed tempus augue. Praesent quis augue
+    malesuada, lacinia risus tempor, venenatis metus. Morbi ac mi ut dui bibendum rhoncus quis sed ex. Cras accumsan
+    orci ut tristique mollis. Nunc quam purus, dictum non molestie eget, maximus sed risus. Etiam neque tortor, dapibus
+    eget ultrices vel, luctus eget ex. Quisque posuere tempus leo quis tristique. In aliquet nulla et sodales pharetra.
+    Nullam ut nunc mattis, sagittis nisl ut, scelerisque nulla.
 
-    Nulla lacinia enim felis, eu blandit velit dapibus sit amet. Ut suscipit diam sit amet semper bibendum. Integer et libero risus. Integer at libero posuere, fringilla massa non, mollis velit. Quisque interdum dolor a velit tempor, a tincidunt lectus congue. Vestibulum facilisis, odio quis rhoncus sagittis, metus lacus pellentesque risus, at pulvinar ipsum est id diam. Praesent varius arcu vel nisi sollicitudin porttitor. Curabitur mi sem, efficitur id maximus a, malesuada in neque. Integer nec placerat velit, dictum porttitor risus. Fusce sollicitudin tellus sit amet aliquet bibendum. Aenean vel interdum felis, at finibus metus. Cras accumsan, velit ac laoreet sagittis, risus erat tempus metus, ut sodales sem sem facilisis turpis.
+    Nulla lacinia enim felis, eu blandit velit dapibus sit amet. Ut suscipit diam sit amet semper bibendum. Integer et
+    libero risus. Integer at libero posuere, fringilla massa non, mollis velit. Quisque interdum dolor a velit tempor, a
+    tincidunt lectus congue. Vestibulum facilisis, odio quis rhoncus sagittis, metus lacus pellentesque risus, at
+    pulvinar ipsum est id diam. Praesent varius arcu vel nisi sollicitudin porttitor. Curabitur mi sem, efficitur id
+    maximus a, malesuada in neque. Integer nec placerat velit, dictum porttitor risus. Fusce sollicitudin tellus sit
+    amet aliquet bibendum. Aenean vel interdum felis, at finibus metus. Cras accumsan, velit ac laoreet sagittis, risus
+    erat tempus metus, ut sodales sem sem facilisis turpis.
   </div>
 </ng-template>
 
 <ng-template #confirm>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Confirmation</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideModal()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
+  <div class='modal-header'>
+    <h4 class='modal-title pull-left'>Confirmation</h4>
+    <button (click)='hideModal()' aria-label='Close' class='btn-close close pull-right' type='button'>
+      <span aria-hidden='true' class='visually-hidden'>&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class='modal-body'>
     Are you sure you want to continue with the plan?
   </div>
   <div class='modal-footer'>
 
-    <button class='btn btn-outline-primary' (click)='modalRef?.hide()'>
+    <button (click)='modalRef?.hide()' class='btn btn-outline-primary'>
       No
     </button>
-    <button class='btn btn-primary' (click)='hideModal()'>
+    <button (click)='hideModal()' class='btn btn-primary'>
       Yes
     </button>
   </div>
@@ -53,84 +80,58 @@
 
 
 <ng-template #withForm>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal with Form Submission</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
+  <div class='modal-header'>
+    <h4 class='modal-title pull-left'>Modal with Form Submission</h4>
+    <button (click)='modalRef?.hide()' aria-label='Close' class='btn-close close pull-right' type='button'>
+      <span aria-hidden='true' class='visually-hidden'>&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class='modal-body'>
     <form [formGroup]='modalWithForm'>
-      <div class="form-row">
-        <div class="form-group">
+      <div class='form-row'>
+        <div class='form-group'>
           <label>Email</label>
-          <input type="email" class="form-control" placeholder="Email" formControlName='email'>
+          <input class='form-control' formControlName='email' placeholder='Email' type='email'>
         </div>
-        <div class="form-group">
+        <div class='form-group'>
           <label>Password</label>
-          <input type="password" class="form-control" placeholder="Password" formControlName='password'>
+          <input class='form-control' formControlName='password' placeholder='Password' type='password'>
         </div>
       </div>
-      <input type="submit" class='hidden' hidden>
+      <input class='hidden' hidden type='submit'>
     </form>
 
   </div>
   <div class='modal-footer'>
 
-    <button class='btn btn-outline-primary' (click)='modalRef?.hide()'>
+    <button (click)='modalRef?.hide()' class='btn btn-outline-primary'>
       Cancel
     </button>
-    <button class='btn btn-primary' (click)='submit()'>
+    <button (click)='submit()' class='btn btn-primary'>
       Save
     </button>
   </div>
 
 </ng-template>
 
-<ng-template #success >
+<ng-template #success>
   <div class='bg-success text-white '>
-  <div class="modal-body has-icon">
-    Success Notification Model, your reason to success:
-    <ul>
-      <li>Apple</li>
-      <li>Banana</li>
-      <li>Orange</li>
-    </ul>
-    <div class="modal-body-content">
-      Content is here
-    </div>
-  </div>
-
-  <div class="modal-footer">
-    <button
-      class='btn btn-outline btn-outline-current-color'
-      (click)='hideModal()'
-    >
-      <span>OK</span>
-    </button>
-  </div>
-  </div>
-</ng-template>
-
-
-<ng-template #warning >
-  <div class='bg-warning text-white '>
-    <div class="modal-body has-icon">
+    <div class='modal-body has-icon'>
       Success Notification Model, your reason to success:
       <ul>
         <li>Apple</li>
         <li>Banana</li>
         <li>Orange</li>
       </ul>
-      <div class="modal-body-content">
+      <div class='modal-body-content'>
         Content is here
       </div>
     </div>
 
-    <div class="modal-footer">
+    <div class='modal-footer'>
       <button
-        class='btn btn-outline btn-outline-current-color'
         (click)='hideModal()'
+        class='btn btn-outline btn-outline-current-color'
       >
         <span>OK</span>
       </button>
@@ -139,24 +140,50 @@
 </ng-template>
 
 
-<ng-template #danger >
+<ng-template #warning>
+  <div class='bg-warning'>
+    <div class='modal-body has-icon'>
+      Success Notification Model, your reason to success:
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+      </ul>
+      <div class='modal-body-content'>
+        Content is here
+      </div>
+    </div>
+
+    <div class='modal-footer'>
+      <button
+        (click)='hideModal()'
+        class='btn btn-outline btn-outline-current-color'
+      >
+        <span>OK</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #danger>
   <div class='bg-danger text-white '>
-    <div class="modal-body has-icon">
+    <div class='modal-body has-icon'>
       Success Notification Model, your reason to success:
       <ul>
         <li>Apple</li>
         <li>Banana</li>
         <li>Orange</li>
       </ul>
-      <div class="modal-body-content">
+      <div class='modal-body-content'>
         Content is here
       </div>
     </div>
 
-    <div class="modal-footer">
+    <div class='modal-footer'>
       <button
-        class='btn btn-outline btn-outline-current-color'
         (click)='hideModal()'
+        class='btn btn-outline btn-outline-current-color'
       >
         <span>OK</span>
       </button>
@@ -165,24 +192,24 @@
 </ng-template>
 
 
-<ng-template #info >
+<ng-template #info>
   <div class='bg-info text-white '>
-    <div class="modal-body has-icon">
+    <div class='modal-body has-icon'>
       Success Notification Model, your reason to success:
       <ul>
         <li>Apple</li>
         <li>Banana</li>
         <li>Orange</li>
       </ul>
-      <div class="modal-body-content">
+      <div class='modal-body-content'>
         Content is here
       </div>
     </div>
 
-    <div class="modal-footer">
+    <div class='modal-footer'>
       <button
-        class='btn btn-outline btn-outline-current-color'
         (click)='hideModal()'
+        class='btn btn-outline btn-outline-current-color'
       >
         <span>OK</span>
       </button>
@@ -190,44 +217,76 @@
   </div>
 </ng-template>
 
+<!-- Come back to properly implemment it once a card component has been designed
+<ng-template #cardModal>
+  <form class='oux-form' id='oaux-form-73' oauxbs4form=''>
+    <div
+      class='card oaux-card context--bg bg-nav'
+      style=' -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16); -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16); box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);'>
+      <div class='card-header oaux-card-header'>
+        <div class='card-header-top'><p aria-level='2' class='card-title' id='oaux-card-2-card-title'
+                                               role='heading'> Card in modal</p>
+          <div class='card-toolbar'>
+            <div class='btn-group' role='group'>
+              <button aria-label='Close' class='btn close' type='button'><span
+                class='sr-only'>Close Viewlet Manager</span>
 
-<div class="container">
-  <div class="row">
-    <h1 id="links">Modal</h1>
+              </button>
+            </div>
+          </div></div>
+        <div class='flair flair--circle bg-white text-success border border-success'>
+
+        </div>
+        <div class='flair flair--line bg-success'></div>
+        <div class='card-text-container'><p aria-level='4' class='h card-text card-text--headline' role='heading'>
+          Card as a modal </p></div>
+      </div>
+      <div class='card-body oaux-card-body oaux-can-scroll'>Card Body</div>
+      <div class='card-footer oaux-card-footer oux-toolbar oux-formbar mt-2 mb-2 oux-bar no-gutters oux-row oux-full'
+           > Card Footer
+      </div>
+    </div>
+  </form>
+</ng-template>
+-->
+
+<div class='container'>
+  <div class='row'>
+    <h1 id='links'>Modal</h1>
   </div>
 </div>
 
-<hr/>
+<hr />
 
 <div class='container'>
-  <div class="d-grid gap-2 gap-lg-2 justify-content-md-start">
+  <div class='d-grid gap-2 gap-lg-2 justify-content-md-start'>
     <br>
     <h4>Standard Modal</h4>
 
     <button
-      class="btn btn-primary"
       (click)='openModal(simple)'
+      class='btn btn-primary'
     >
       Simple Modal
     </button>
 
     <button
-      class="btn btn-primary"
       (click)='openModal(long)'
+      class='btn btn-primary'
     >
       Very Long Simple Modal
     </button>
 
     <button
-      class="btn btn-primary"
       (click)='openModal(confirm)'
+      class='btn btn-primary'
     >
       Confirmation Modal
     </button>
 
     <button
-      class="btn btn-primary"
       (click)='openModal(withForm)'
+      class='btn btn-primary'
     >
       Modal with Form
     </button>
@@ -235,40 +294,43 @@
     <br>
     <h4>Notification Modal</h4>
     <button
-      class="btn btn-success"
       (click)='openModal(success)'
+      class='btn btn-success'
     >
       Notification Modal: Success
     </button>
 
     <button
-      class="btn btn-warning"
       (click)='openModal(warning)'
+      class='btn btn-warning'
     >
       Notification Modal: Warning
     </button>
 
     <button
-      class="btn btn-danger"
       (click)='openModal(danger)'
+      class='btn btn-danger'
     >
       Notification Modal: Danger
     </button>
 
     <button
-      class="btn btn-info"
       (click)='openModal(info)'
+      class='btn btn-info'
     >
-      Modal with Form
+      Notification Modal: Info
     </button>
 
 
     <br>
     <h4>Customizable/Card Modal</h4>
+
     <ul>
-      <li>Card Modal</li>
+      <li>Card modal</li>
       <li>Customizable Modal</li>
     </ul>
+
+
   </div>
 </div>
 

@@ -12,12 +12,14 @@ const routes: Routes = [
 	{ path: 'typeaheads', loadChildren: () => import('./typeaheads/typeaheads.module').then(m => m.TypeaheadsModule) },
   { path: 'input-text', loadChildren: () => import('./input-text/input-text.module').then(m => m.InputTextModule) },
   { path: 'modals', loadChildren: () => import('./modal/modal.module').then(m => m.ModalModule) },
+  { path: 'dialogs', loadChildren: () => import('./dialogs/dialogs.module').then(m => m.DialogsModule) },
   { path: 'typography', loadChildren: () => import('./typography/typography.module').then(m => m.TypographyModule) },
 	{ path: 'checkboxes', loadChildren: () => import('./checkboxes/checkboxes.module').then(m => m.CheckboxesModule) },
 	{ path: 'radio', loadChildren: () => import('./radio/radio.module').then(m => m.RadioModule) },
 	{ path: 'switch', loadChildren: () => import('./switch/switch.module').then(m => m.SwitchModule) },
 	{ path: 'iconography', loadChildren: () => import('./iconography/iconography.module').then(m => m.IconographyModule) },
 	{ path: 'tabs', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule) },
+
 ];
 
 @NgModule({
