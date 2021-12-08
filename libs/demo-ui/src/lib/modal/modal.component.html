@@ -1,0 +1,274 @@
+<ng-template #simple>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+<ng-template #long>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec blandit felis, et imperdiet quam. Nam laoreet hendrerit dui ac mattis. Suspendisse id magna id libero fringilla varius. Nulla finibus quam in ligula elementum ornare at in massa. Maecenas sed massa est. Aenean hendrerit ultrices tellus, nec sagittis est tincidunt quis. Morbi ornare aliquet tempor. Mauris sed urna ut magna ultricies vestibulum vel vitae ipsum. Aliquam sit amet luctus ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eget ante vel odio euismod finibus vel a velit. Pellentesque dictum ligula mi, ut lobortis libero commodo vehicula. Aenean at est risus. Proin dapibus bibendum aliquam.
+
+    Nullam scelerisque sed massa vel pellentesque. Nullam eu massa ligula. Donec quis quam non dolor viverra euismod. Aliquam eu facilisis ipsum. Aliquam vel neque sit amet augue vestibulum scelerisque a vitae nisi. Aenean commodo euismod fermentum. Ut ac eros quam. Nam et elementum risus. Vestibulum vulputate lobortis nisl, vel malesuada urna pellentesque eu. Etiam id est ornare, laoreet nibh in, sodales tortor. Maecenas imperdiet, turpis eget auctor tincidunt, risus nibh lobortis urna, et fermentum ex justo eu elit. Nunc sollicitudin quam tellus, at vestibulum metus sollicitudin eu. Aenean posuere, urna sit amet sodales ultrices, lacus leo vehicula nisi, vitae hendrerit ex urna nec eros. Pellentesque ullamcorper mi eget imperdiet pretium.
+
+    Sed a justo ut eros egestas pretium. Nam sapien magna, ultrices sit amet egestas eu, mollis non sapien. Proin malesuada nisl et vehicula condimentum. Nulla facilisis mattis metus ac rutrum. Nunc sit amet euismod urna. Phasellus in laoreet mi. Integer pharetra leo vel laoreet lacinia. Etiam egestas risus sed consequat pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam a turpis feugiat metus malesuada ornare a id elit. Vestibulum ultrices sem ex, sit amet molestie ligula varius ut. Phasellus sagittis eros tellus, eu pharetra sem eleifend ut. Quisque a velit justo.
+
+    Pellentesque dignissim urna nulla, non volutpat enim feugiat bibendum. Nullam sed tempus augue. Praesent quis augue malesuada, lacinia risus tempor, venenatis metus. Morbi ac mi ut dui bibendum rhoncus quis sed ex. Cras accumsan orci ut tristique mollis. Nunc quam purus, dictum non molestie eget, maximus sed risus. Etiam neque tortor, dapibus eget ultrices vel, luctus eget ex. Quisque posuere tempus leo quis tristique. In aliquet nulla et sodales pharetra. Nullam ut nunc mattis, sagittis nisl ut, scelerisque nulla.
+
+    Nulla lacinia enim felis, eu blandit velit dapibus sit amet. Ut suscipit diam sit amet semper bibendum. Integer et libero risus. Integer at libero posuere, fringilla massa non, mollis velit. Quisque interdum dolor a velit tempor, a tincidunt lectus congue. Vestibulum facilisis, odio quis rhoncus sagittis, metus lacus pellentesque risus, at pulvinar ipsum est id diam. Praesent varius arcu vel nisi sollicitudin porttitor. Curabitur mi sem, efficitur id maximus a, malesuada in neque. Integer nec placerat velit, dictum porttitor risus. Fusce sollicitudin tellus sit amet aliquet bibendum. Aenean vel interdum felis, at finibus metus. Cras accumsan, velit ac laoreet sagittis, risus erat tempus metus, ut sodales sem sem facilisis turpis.
+  </div>
+</ng-template>
+
+<ng-template #confirm>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Confirmation</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideModal()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Are you sure you want to continue with the plan?
+  </div>
+  <div class='modal-footer'>
+
+    <button class='btn btn-outline-primary' (click)='modalRef?.hide()'>
+      No
+    </button>
+    <button class='btn btn-primary' (click)='hideModal()'>
+      Yes
+    </button>
+  </div>
+</ng-template>
+
+
+<ng-template #withForm>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal with Form Submission</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]='modalWithForm'>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" placeholder="Email" formControlName='email'>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="Password" formControlName='password'>
+        </div>
+      </div>
+      <input type="submit" class='hidden' hidden>
+    </form>
+
+  </div>
+  <div class='modal-footer'>
+
+    <button class='btn btn-outline-primary' (click)='modalRef?.hide()'>
+      Cancel
+    </button>
+    <button class='btn btn-primary' (click)='submit()'>
+      Save
+    </button>
+  </div>
+
+</ng-template>
+
+<ng-template #success >
+  <div class='bg-success text-white '>
+  <div class="modal-body has-icon">
+    Success Notification Model, your reason to success:
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Orange</li>
+    </ul>
+    <div class="modal-body-content">
+      Content is here
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      class='btn btn-outline btn-outline-current-color'
+      (click)='hideModal()'
+    >
+      <span>OK</span>
+    </button>
+  </div>
+  </div>
+</ng-template>
+
+
+<ng-template #warning >
+  <div class='bg-warning text-white '>
+    <div class="modal-body has-icon">
+      Success Notification Model, your reason to success:
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+      </ul>
+      <div class="modal-body-content">
+        Content is here
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        class='btn btn-outline btn-outline-current-color'
+        (click)='hideModal()'
+      >
+        <span>OK</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #danger >
+  <div class='bg-danger text-white '>
+    <div class="modal-body has-icon">
+      Success Notification Model, your reason to success:
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+      </ul>
+      <div class="modal-body-content">
+        Content is here
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        class='btn btn-outline btn-outline-current-color'
+        (click)='hideModal()'
+      >
+        <span>OK</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #info >
+  <div class='bg-info text-white '>
+    <div class="modal-body has-icon">
+      Success Notification Model, your reason to success:
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+      </ul>
+      <div class="modal-body-content">
+        Content is here
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button
+        class='btn btn-outline btn-outline-current-color'
+        (click)='hideModal()'
+      >
+        <span>OK</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+
+<div class="container">
+  <div class="row">
+    <h1 id="links">Modal</h1>
+  </div>
+</div>
+
+<hr/>
+
+<div class='container'>
+  <div class="d-grid gap-2 gap-lg-2 justify-content-md-start">
+    <br>
+    <h4>Standard Modal</h4>
+
+    <button
+      class="btn btn-primary"
+      (click)='openModal(simple)'
+    >
+      Simple Modal
+    </button>
+
+    <button
+      class="btn btn-primary"
+      (click)='openModal(long)'
+    >
+      Very Long Simple Modal
+    </button>
+
+    <button
+      class="btn btn-primary"
+      (click)='openModal(confirm)'
+    >
+      Confirmation Modal
+    </button>
+
+    <button
+      class="btn btn-primary"
+      (click)='openModal(withForm)'
+    >
+      Modal with Form
+    </button>
+
+    <br>
+    <h4>Notification Modal</h4>
+    <button
+      class="btn btn-success"
+      (click)='openModal(success)'
+    >
+      Notification Modal: Success
+    </button>
+
+    <button
+      class="btn btn-warning"
+      (click)='openModal(warning)'
+    >
+      Notification Modal: Warning
+    </button>
+
+    <button
+      class="btn btn-danger"
+      (click)='openModal(danger)'
+    >
+      Notification Modal: Danger
+    </button>
+
+    <button
+      class="btn btn-info"
+      (click)='openModal(info)'
+    >
+      Modal with Form
+    </button>
+
+
+    <br>
+    <h4>Customizable/Card Modal</h4>
+    <ul>
+      <li>Card Modal</li>
+      <li>Customizable Modal</li>
+    </ul>
+  </div>
+</div>
+
