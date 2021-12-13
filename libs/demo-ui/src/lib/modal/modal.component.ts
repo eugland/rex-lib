@@ -1,6 +1,7 @@
 import { Component, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { FormBuilder } from '@angular/forms';
+import { CARD, CardData } from './modal.data';
 
 @Component({
   selector: 'rex-lib-links',
@@ -9,10 +10,16 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ModalComponent {
   modalRef?: BsModalRef
+
+  // form modal
   modalWithForm = this.formBuilder.group({
     email: '',
     password: ''
   })
+
+  // custom for one-design card modal
+  card: CardData = CARD[0];
+
   constructor(private modalService: BsModalService, private formBuilder: FormBuilder) {
 
   }
@@ -35,5 +42,14 @@ export class ModalComponent {
     this.modalWithForm.reset();
     this.hideModal();
   }
+
+  switchCard(index: number): boolean {
+    if (index < 0 || index > CARD.length) {
+      index = 0;
+    }
+    this.card = CARD[index];
+    return true;
+  }
+
 
 }

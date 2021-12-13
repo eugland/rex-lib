@@ -217,38 +217,44 @@
   </div>
 </ng-template>
 
-<!-- Come back to properly implemment it once a card component has been designed
+<!-- TODO Come back to properly implemment it once a card component has been designed -->
 <ng-template #cardModal>
-  <form class='oux-form' id='oaux-form-73' oauxbs4form=''>
+  <form class='oux-form'>
     <div
       class='card oaux-card context--bg bg-nav'
-      style=' -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16); -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16); box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);'>
-      <div class='card-header oaux-card-header'>
-        <div class='card-header-top'><p aria-level='2' class='card-title' id='oaux-card-2-card-title'
+      style=>
+      <div class='card-header oaux-card-header '>
+        <div class='card-header-top'>
+          <p aria-level='2' class='card-title' id='oaux-card-2-card-title'
                                                role='heading'> Card in modal</p>
           <div class='card-toolbar'>
             <div class='btn-group' role='group'>
-              <button aria-label='Close' class='btn close' type='button'><span
-                class='sr-only'>Close Viewlet Manager</span>
+              <button
+                aria-label='Close'
+                class='btn-close close pull-right'
+                type='button'
+                (click)='modalRef?.hide()'><span
+                class='sr-only btn btn-close btn-close-white'>Close Viewlet Manager</span>
 
               </button>
             </div>
           </div></div>
-        <div class='flair flair--circle bg-white text-success border border-success'>
-
+        <div class='flair flair--circle bg-white text-success border border-success' [ngClass]='"border-" + card.border'>
+          <span class="fal fa-user text-primary text-center"></span>
         </div>
-        <div class='flair flair--line bg-success'></div>
-        <div class='card-text-container'><p aria-level='4' class='h card-text card-text--headline' role='heading'>
-          Card as a modal </p></div>
+        <div class='flair flair--line bg-success' [ngClass]='"bg-" + card.border'></div>
+        <div class='card-text-container'>
+          <p aria-level='4' class='h card-text card-text--headline' role='heading' [innerHTML]='card.title'></p>
+        </div>
       </div>
-      <div class='card-body oaux-card-body oaux-can-scroll'>Card Body</div>
-      <div class='card-footer oaux-card-footer oux-toolbar oux-formbar mt-2 mb-2 oux-bar no-gutters oux-row oux-full'
-           > Card Footer
+      <div class='card-body oaux-card-body oaux-can-scroll' [innerHTML]='card.content'></div>
+      <div class='card-footer oaux-card-footer oux-toolbar oux-formbar mt-2 mb-2 oux-bar oux-row oux-full'>
+        <button (click)='modalRef?.hide()' class='btn btn-outline-primary'>Close</button>
       </div>
     </div>
   </form>
 </ng-template>
--->
+
 
 <div class='container'>
   <div class='row'>
@@ -323,13 +329,42 @@
 
 
     <br>
-    <h4>Customizable/Card Modal</h4>
+    <h4>One Design Card Modal:</h4>
+
 
     <ul>
       <li>Card modal</li>
       <li>Customizable Modal</li>
     </ul>
 
+    <button
+      (click)='switchCard(0) && openModal(cardModal)'
+      class='btn btn-info'
+    >
+     Skeleton Information modal
+    </button>
+
+    <button
+      (click)='switchCard(1) && openModal(cardModal)'
+      class='btn btn-info'
+    >
+      Long Information modal
+    </button>
+
+
+    <button
+      (click)='switchCard(2) && openModal(cardModal)'
+      class='btn btn-warning'
+    >
+      Warning Modal
+    </button>
+
+    <button
+      (click)='switchCard(3) && openModal(cardModal)'
+      class='btn btn-danger'
+    >
+      Error Modal
+    </button>
 
   </div>
 </div>
