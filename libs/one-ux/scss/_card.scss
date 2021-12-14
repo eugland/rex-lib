@@ -1,0 +1,362 @@
+
+.dropdown-menu.oaux-card-in {
+  padding: 0 !important;
+}
+.oaux-card-in .oaux-card,
+.oaux-card.oaux-card-in {
+}
+.oaux-card-in.oaux-card-in--dropdown.dropdown-menu.show {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+/*
+-webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    header
+*/
+
+.oaux-card.card {
+  min-width: 350px;
+  border: none !important;
+
+  .oaux-card-header,
+  .card-header-top {
+    display: block;
+    position: relative;
+  }
+
+  .card-header {
+    height: 88px;
+    padding: 5px;
+
+    color:white;
+    background-color:black;
+    border-bottom:inherit;
+
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+
+    &.card-title-empty {
+      height: 60px !important;
+
+      .card-header-top {
+        height: 10px !important;
+      }
+    }
+
+    .card-toolbar {
+      color: currentColor;
+      .btn-group {
+        color: currentColor;
+        .btn {
+          opacity: 0.45;
+          color: currentColor;
+          /* font-size: 1.25rem; 75%; */
+          border-radius: 0 !important;
+
+          /* @include OauxIconSize(14px !important) {} */
+
+          &:hover, &:focus, &:active, .active {
+            opacity: 0.75;
+          }
+
+          &.disabled, &:disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+
+  .card-header-top {
+    height: 20px;
+
+    > * {
+      display: flex; /* block */
+      position: absolute !important;
+      /* line-height:20px !important; */
+      /* font-weight: 100 !important; */
+      padding: 0;
+      margin: 0;
+    }
+
+    .card-title {
+      text-transform: uppercase;
+      font-size: 12px !important;
+      top: 0.25rem;
+      left: 1rem;
+      letter-spacing: 1.56px !important;
+    }
+
+    .card-toolbar {
+      top: 0px;
+      right: 0px;
+      /* font-weight: 100; */
+      /* font-size: 150%; */
+      /* font-size: $font-size-base; */
+
+      /*
+      .btn {
+        padding: 0 0.25rem !important;
+
+        > .ng-fa-icon,
+        > fa-icon,
+        > oaux-icon-fa-toggle > fa-icon {
+          margin-right:0px !important;
+        }
+      }
+      */
+    }
+
+    .card-tagline {
+      top: -5px;
+      right: 5px;
+      font-weight: 100 !important;
+      font-size: 12px !important;
+    }
+
+
+    .btn-group .svg-inline--fa {
+      height: 1.25em  !important;
+      width: 1.25em !important;
+    }
+
+
+  }
+
+  .flair.flair--circle {
+    background-color: $body-bg;
+    height: 4rem;
+    border-radius: 50%;
+    width: 4rem;
+    line-height: 3.25rem;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    left: 1.25rem;
+    bottom: -0.75rem; /*-1.25rem;*/
+    position: absolute;
+    z-index: 1;
+    border-width: 3px !important;
+    border-style: solid !important;
+    padding-top:4px;
+  }
+
+  .flair.flair--circle.flair--none {
+    height: auto;
+    width: auto;
+    line-height: 1;
+    border-width:0 !important;
+    border-style: hidden !important;
+    border-color: transparent !important;
+    padding-top:0 !important;
+  }
+
+  .flair.flair--circle.flair--none img {
+    width:1.65em;
+  }
+
+  .flair.flair--line {
+    position: absolute;
+    bottom: -1px;
+    height: 3px;
+    width: 100%;
+    display: block;
+    left: 0;
+  }
+
+  .flair.flair--circle > * {
+    line-height: inherit !important;
+    font-size: 38px;
+  }
+
+  .card-body {
+    border-bottom: none;
+    background-color: $body-bg;
+    color: $body-color;
+    /* padding: 2rem 0px 0px; */
+    padding: 1.75rem $card-spacer-x 0 $card-spacer-x;
+    margin: 0px;
+
+    &.card-body--text {
+      padding: 2rem 1.25rem 1.25rem !important;
+    }
+
+    &.card-body--form {
+      padding: 2rem 1.25rem 0 !important;
+    }
+
+    /*
+    &.card-body--container {
+
+    }
+    */
+    /*
+    padding: .75rem 0rem 0rem;
+    */
+
+  }
+  .card-footer, .card-faux-footer {
+    border-top: none;
+    padding: 0px;
+    margin: 0px;
+    background-color: darken($body-bg, 7.5%);
+    color: color-yiq(darken($body-bg, 7.5%));
+
+
+    &.card-footer--text, &.card-faux-footer--text {
+      padding: $card-spacer-y $card-spacer-x;
+    }
+
+    /*
+    &.card-footer--container, &.card-faux-footer--container {
+
+    }
+    */
+
+    &.oux-formbar {
+      background-color: $body-bg;
+      color: $body-color;
+      padding: 0.5rem 1rem 1rem;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .card-buttons {
+    padding:1rem;
+    width: 100%;
+    justify-content: center;
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .card-footer, .card-faux-footer, .card-buttons{
+
+    /*
+    button:not(.toolbar-item),
+    .btn:not(.toolbar-item)
+    {
+      text-transform: uppercase;
+      font-size: 1rem;
+
+    }
+    */
+
+
+    button:not(.toolbar-item),
+    .card-footer .btn:not(.toolbar-item)
+    {
+      padding:0.375rem 0.75rem !important;
+
+    }
+
+    /*
+    button:not(.toolbar-item):only-child,
+    .btn:not(.toolbar-item):only-child
+    {
+      width:80%;
+      font-size:120%;
+    }
+    */
+
+    button:not(.toolbar-item),
+    .btn:not(.toolbar-item)
+    {
+      margin-left:0.35rem; margin-right:0.35rem;
+    }
+
+    button:not(.toolbar-item):first-child,
+    .btn:not(.toolbar-item):first-child
+    {
+      margin-left:0 !important;
+    }
+
+    button:not(.toolbar-item):last-child,
+    .btn:not(.toolbar-item):last-child
+    {
+      margin-right:0 !important;
+    }
+
+  }
+}
+
+
+.oaux-card .card-text-container {
+  position: initial;
+  padding-left: 6rem !important;
+  overflow: hidden;
+  display: flex;
+  max-width: none;
+  white-space: pre-line;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding-bottom: 0.5rem !important;
+  line-height: 1.2;
+}
+.oaux-card .card-text-container, .oaux-card .card-text-container > * {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.oaux-card .card-text.card-text--headline {
+  /*
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  */
+  text-overflow: ellipsis;
+  font-size: 22px;
+  letter-spacing: 0.22px;
+}
+
+.oaux-card .card-flex {
+  align-self: self-start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: self-start;
+  justify-content: center;
+}
+
+/* .toolbar-item.dropdown-item */
+.oaux-card .card-flex.card-flex--center > * {
+  align-items: center; text-align: center;
+  flex-grow: 0;
+  flex-basis: 0;
+}
+
+.oaux-card .card-content {
+  padding-top: 0; /* 1.5em; */
+  /* height: 45vh; */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*.modal*/
+.card {
+  background-color: transparent;
+  .card-toolbar{
+    .btn-group {
+      /* font-size: $font-size-base; */
+      border-radius: 0 !important;
+
+      .btn {
+        border: 0;
+        padding: 0 0.25rem !important;
+        appearance: none;
+      }
+      /*
+      > * > .btn, > .btn {
+        font-size: 65% !important;
+      }
+      */
+    }
+  }
+  .oaux-card > .oaux-card-body {
+    width: 100%;
+  }
+
+}

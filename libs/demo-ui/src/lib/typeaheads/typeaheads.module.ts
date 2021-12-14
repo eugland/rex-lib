@@ -5,6 +5,7 @@ import { TypeaheadsComponent } from './typeaheads.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { FormsModule } from '@angular/forms';
     TypeaheadsRoutingModule,
     TypeaheadModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   declarations: [TypeaheadsComponent],
