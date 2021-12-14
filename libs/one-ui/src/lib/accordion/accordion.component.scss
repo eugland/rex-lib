@@ -1,0 +1,37 @@
+@import "../../../../one-ux/one-ux.scss";
+.rex-accordion {
+    .card-header {
+        background-color: $blue-light-1;
+        .btn-link {
+            text-decoration: none;
+            padding: 0;
+            border: none;
+        }
+        div[accordion-heading] {
+            color: $blue;
+            :first-child {
+                margin-right: 15px;
+            }
+        }
+    }
+
+    .chevron::before {
+        border-style: solid;
+        border-width: 0.125em 0.125em 0 0;
+        content: '';
+        display: inline-flex;
+        height: 0.65em;
+        left: 0.15em;
+        position: relative;
+        top: 0.625em;
+        transform: rotate(-45deg);
+        vertical-align: top;
+        width: 0.65em;
+        float: right;
+    }
+
+    .chevron.down:before {
+        top: 0.275em;
+        transform: rotate(135deg);
+    }
+}

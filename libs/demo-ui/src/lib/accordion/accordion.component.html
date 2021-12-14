@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <h1>Accordion</h1>
+    </div>
+</div>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <h2>Basic Accordion</h2>
+        <div class="bd-example">
+            <rex-accordion [groups]="groups"></rex-accordion>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Accordion with an icon</h2>
+        <div class="bd-example">
+            <rex-accordion [groups]="groups2"></rex-accordion>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Accordion with an animated chevron</h2>
+        <div class="bd-example">
+            <rex-accordion [groups]="groups3"></rex-accordion>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>Accordion with an icon and an animated chevron</h2>
+        <div class="bd-example">
+            <div class="info">
+                <div class="info-message"><strong>Info:</strong> {{info}}</div>
+            </div>
+            <rex-accordion [groups]="groups4" (isOpenChange)="onOpenChange($event)"></rex-accordion>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <h2>"One at a Time" Accordion</h2>
+        <div class="bd-example">
+            <rex-accordion [groups]="groups4" [closeOthers]= "closeOthers"></rex-accordion>
+        </div>
+    </div>
+</div>
+<br><br><br><br>

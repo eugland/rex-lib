@@ -6,3 +6,5 @@ export * from './lib/timepicker/timepicker.component';
 export * from './lib/one-ui.module';
 export * from './lib/tabs/index';
 export * from './lib/models/tabs.models';
+export * from './lib/accordion/index';
+export * from './lib/models/accordion.models';
