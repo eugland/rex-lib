@@ -1,0 +1,17 @@
+<accordion *ngIf="groups.length > 0"
+    [closeOthers]="closeOthers"
+    [isAnimated]="isAnimated">
+    <ng-container *ngFor="let group of groups">
+        <accordion-group 
+            [heading]="!group.useHeadingTemplate ? group.heading: ''"
+            (isOpenChange)="onOpenChange($event, group)"
+            [isDisabled]="!!group.isDisabled"
+            [isOpen]="!!group.isOpen"
+            [panelClass]="group.panelClass? group.panelClass: 'panel-default'"
+        >
+            <div accordion-heading #heading [id]="'heading-' + group.id" *ngIf="group.useHeadingTemplate" [innerHTML]="group.heading"></div>
+            <ng-container *ngIf="!group.useContentTemplate">{{group?.content}}</ng-container>
+            <ng-template><div *ngIf="group.useContentTemplate" [innerHTML]="group.content"></div></ng-template>
+        </accordion-group>
+    </ng-container>
+</accordion>

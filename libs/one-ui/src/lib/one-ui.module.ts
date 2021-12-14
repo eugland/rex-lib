@@ -8,6 +8,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { TimepickerComponent } from './timepicker/timepicker.component';
 import { RexTabsModule } from './tabs';
+import { RexAccordionModule } from './accordion';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { RexTabsModule } from './tabs';
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     ReactiveFormsModule,
-    RexTabsModule
+    RexTabsModule,
+    RexAccordionModule
   ],
   declarations: [
     StepperStepComponent,
