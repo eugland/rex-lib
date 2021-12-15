@@ -31,6 +31,44 @@
         <strong>data-steps</strong> (Optional): Steps in the steps as string format of Array of StepperStep class. When
         not defined, nothing will be displayed.
       </p>
+      <h3>Definitions</h3>
+      <h4><strong>Enum</strong>: StepperType</h4>
+      <p><strong>Package</strong>: @rex-lib/one-ui</p>
+      <h5>Properties</h5>
+      <p><strong>Default</strong> [Static value: '']: Vertical stepper style</p>
+      <p><strong>Horizontal</strong> [Static value: 'horizontal']: Horizontal stepper style</p>
+      <h4><strong>Enum</strong>: StepperStepState</h4>
+      <p><strong>Package</strong>: @rex-lib/one-ui</p>
+      <h5>Properties</h5>
+      <p>
+        <strong>Default</strong> [Static value: '']: Default state where step is not clickable. Indicator is a bordered
+        circle. Line connecting succeeding step will be gray colour.
+      </p>
+      <p>
+        <strong>NextStep</strong> [Static value: 'next-step']: Next step state where step is clickable. Indicator is a
+        filled circle with primary colour. Line connecting succeeding step will be primary colour.
+      </p>
+      <p>
+        <strong>Complete</strong> [Static value: 'complete']: Complete state where step is clickable. Indicator is a
+        filled circle with primary colour. Line connecting succeeding step will be primary colour.
+      </p>
+      <h4><strong>Class</strong>: StepperStep</h4>
+      <p><strong>Package</strong>: @rex-lib/one-ui</p>
+      <h5>Attributes</h5>
+      <p><strong>id</strong> [Required, string]: Id for the step</p>
+      <p>
+        <strong>pill</strong> [Optional, number or string]: Letter or a number to indicate the step. Will display blank
+        if not defined.
+      </p>
+      <p>
+        <strong>icon</strong> [Optional, string]: Class(es) for the icon. Will display blank if not defined. If pill is
+        defined, it will take precedence over icon.
+      </p>
+      <p><strong>title</strong> [Required, string]: Title for the step</p>
+      <p><strong>desc</strong> [Optional, string]: Description of the step. It will appear below the title.</p>
+      <p><strong>state</strong> [Optional, StepperStepState]: State of the step. Default value: Default</p>
+      <p><strong>valid</strong> [Optional, boolean]: Indicates if the step is valid. Default value: false</p>
+      <p><strong>active</strong> [Optional, boolean]: Indicates if the step is active. Default value: false</p>
     </div>
   </div>
   <div class="row mt-3">

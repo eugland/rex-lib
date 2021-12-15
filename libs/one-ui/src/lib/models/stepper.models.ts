@@ -18,8 +18,3 @@ export interface StepperStep {
 	valid: boolean,
 	active: boolean
 }
-
-export interface Stepper {
-	id: string,
-	type: StepperStep;
-}
