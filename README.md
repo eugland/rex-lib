@@ -55,6 +55,9 @@ nx run {app-project-name | library-project-name}-e2e:e2e
 ### Run e2e test for development purpose
 nx run {app-project-name | library-project-name}-e2e:e2e --watch
 
+#### If Cypress failed to start error occurs, run the following in terminal and wait for it to complete. ####
+.\node_modules\.bin\cypress.cmd install --force
+
 
 ## -------------
 ## Run dep-graph

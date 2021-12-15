@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Steppers</h1>
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>How to use</h2>
+      <p>Stepper can be implemented with Angular binding framework or by itself without binding.</p>
+      <h3>Component Directive for Stepper</h3>
+      <pre><code>rex-stepper</code></pre>
+      <h4>Available parameters</h4>
+      <h5>Angular binding parameters</h5>
+      <p>
+        <strong>type</strong> (Optional): Type of the stepper. Possible values: StepperType.Default |
+        StepperType.Horizontal
+      </p>
+      <p>
+        <strong>steps</strong> (Optional): Steps in the stepper as Array of StepperStep class. When not defined, nothing
+        will be displayed.
+      </p>
+      <h4>Static value parameters</h4>
+      <p><strong>data-type</strong> (Optional): Type of the stepper. Possible values: "" | "horizontal"</p>
+      <p>
+        <strong>data-steps</strong> (Optional): Steps in the steps as string format of Array of StepperStep class. When
+        not defined, nothing will be displayed.
+      </p>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <h3>Examples</h3>
+      <h4>Vertical stepper (default) with numbers</h4>
+      <rex-stepper stepperId="stepper1" [type]="stepper1Type" [steps]="stepper1Steps"></rex-stepper>
+      <pre class="code-view"><code>{{stepper1CodeSnippet}}</code></pre>
+      <pre class="code-view"><code>{{stepper1CodeSnippetNoBinding}}</code></pre>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <h4>Horizontal stepper with letters</h4>
+      <rex-stepper stepperId="stepper1" [type]="stepperType" [steps]="stepper2Steps"></rex-stepper>
+      <pre class="code-view"><code>{{stepper2CodeSnippet}}</code></pre>
+      <pre class="code-view"><code>{{stepper2CodeSnippetNoBinding}}</code></pre>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <h4>Individual step (default) can be rendered separately.</h4>
+      <rex-stepper-step [step]="step"></rex-stepper-step>
+      <pre class="code-view"><code>{{step1CodeSnippet}}</code></pre>
+      <pre class="code-view"><code>{{step1CodeSnippetNoBinding}}</code></pre>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <h4>Individual step (horizontal) can be rendered separately.</h4>
+      <rex-stepper-step [type]="stepperType" [step]="step"></rex-stepper-step>
+      <pre class="code-view"><code>{{step2CodeSnippet}}</code></pre>
+      <pre class="code-view"><code>{{step2CodeSnippetNoBinding}}</code></pre>
+    </div>
+  </div>
+</div>

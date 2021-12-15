@@ -147,6 +147,9 @@ $rex-stepper-step-line-vertical-x: $rex-stepper-step-indicator-width * 0.5 + $re
 				display: inline-block;
 				text-align: center;
 				position: absolute;
+				&:before {
+					vertical-align: middle;
+				}
 			}
 
 			// Title default

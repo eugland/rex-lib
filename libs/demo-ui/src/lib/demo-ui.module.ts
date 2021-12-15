@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from './input-text/input-text.module';
 import { TimePickerModule } from './time-picker/time-picker.module';
 import { ModalModule } from './modal/modal.module';
+import { SteppersModule } from './steppers/steppers.module';
 
 @NgModule({
   imports: [
@@ -15,10 +16,8 @@ import { ModalModule } from './modal/modal.module';
     InputTextModule,
     TimePickerModule,
     ModalModule,
+    SteppersModule
   ],
-  declarations: [],
-  exports: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class DemoUIModule {
-}
+export class DemoUIModule {}

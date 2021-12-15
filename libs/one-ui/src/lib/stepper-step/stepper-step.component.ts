@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+import { Attribute, Component, EventEmitter, HostBinding, Input, Optional, Output } from '@angular/core';
 import { StepperStep, StepperStepState, StepperType } from '../models/stepper.models';
 
 @Component({
@@ -6,23 +6,43 @@ import { StepperStep, StepperStepState, StepperType } from '../models/stepper.mo
   templateUrl: './stepper-step.component.html',
   styleUrls: ['./stepper-step.component.scss']
 })
-export class StepperStepComponent implements OnInit {
+export class StepperStepComponent {
   @HostBinding('class') class = `rex-stepper-step`;
-  @HostBinding('class.horizontal') isTypeHorizontal: boolean | undefined;
-  @HostBinding('class.next-step') isStateNextStep: boolean | undefined;
-  @HostBinding('class.complete') isStateComplete: boolean | undefined;
-  @HostBinding('class.valid') isValid: boolean | undefined;
-  @HostBinding('class.invalid') isInvalid: boolean | undefined;
-  @HostBinding('class.active') isActive: boolean | undefined;
-  @HostBinding('class.inactive') isInactive: boolean | undefined;
+  @HostBinding('class.horizontal') isTypeHorizontal = false;
+  @HostBinding('class.next-step') isStateNextStep = false;
+  @HostBinding('class.complete') isStateComplete = false;
+  @HostBinding('class.valid') isValid = false;
+  @HostBinding('class.invalid') isInvalid = false;
+  @HostBinding('class.active') isActive = false;
+  @HostBinding('class.inactive') isInactive = false;
 
-  @Input() type: StepperType = StepperType.Default;
-  @Input() step: StepperStep | undefined;
+  private _type: StepperType = StepperType.Default;
+  /**
+   * Get type of Stepper
+   */
+  get type(): StepperType {
+    return this._type;
+  }
+  /**
+   * Set type of Stepper
+   */
+  @Input() set type(val: StepperType) {
+    this._type = val;
+    this.isTypeHorizontal = this._type === StepperType.Horizontal;
+  }
 
-  @Output() stepClick = new EventEmitter<string>();
-
-  ngOnInit() {
-    this.isTypeHorizontal = this.type === StepperType.Horizontal;
+  private _step?: StepperStep;
+  /**
+   * Get step in a stepper
+   */
+  get step(): StepperStep | undefined {
+    return this._step;
+  }
+  /**
+   * Step in a stepper
+   */
+  @Input() set step(val: StepperStep | undefined) {
+    this._step = val;
     this.isStateNextStep = this.step ? this.step.state === StepperStepState.NextStep : false;
     this.isStateComplete = this.step ? this.step.state === StepperStepState.Complete : false;
     this.isValid = this.step ? this.step.valid : false;
@@ -35,8 +55,15 @@ export class StepperStepComponent implements OnInit {
    * TODO: Update to add icon within the bullet
    */
   get iconClass(): string {
-    const _iconClass = ``;
+    const _iconClass = this.step?.pill ? '' : `${this.step?.icon}`;
     return _iconClass;
+  }
+
+  @Output() stepClick = new EventEmitter<string>();
+
+  constructor(@Optional() @Attribute('data-type') dataType: string, @Attribute('data-step') dataStep: string) {
+    this.type = (dataType && dataType.toLowerCase() === 'horizontal') ? StepperType.Horizontal : StepperType.Default;
+    this.step = JSON.parse(dataStep);
   }
 
   /**

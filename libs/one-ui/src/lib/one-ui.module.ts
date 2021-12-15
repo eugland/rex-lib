@@ -20,18 +20,7 @@ import { RexAccordionModule } from './accordion';
     RexTabsModule,
     RexAccordionModule
   ],
-  declarations: [
-    StepperStepComponent,
-    StepperComponent,
-    DatepickerComponent,
-    TimepickerComponent
-  ],
-  exports: [
-    StepperStepComponent,
-    StepperComponent,
-    DatepickerComponent,
-    TimepickerComponent
-  ]
+  declarations: [StepperStepComponent, StepperComponent, DatepickerComponent, TimepickerComponent],
+  exports: [StepperStepComponent, StepperComponent, DatepickerComponent, TimepickerComponent],
 })
-export class OneUIModule {
-}
+export class OneUIModule {}

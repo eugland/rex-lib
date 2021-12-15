@@ -25,9 +25,8 @@ describe('StepperStepComponent', () => {
   });
 
   describe('Setup component', () => {
-    describe('ngOnInit', () => {
-      it('without step set, all HostBinding properties should be false', () => {
-        component.ngOnInit();
+    describe('Initialize', () => {
+      it('without step set, all HostBinding properties should have default values', () => {
         expect(component.isTypeHorizontal).toBe(false);
         expect(component.isStateNextStep).toBe(false);
         expect(component.isStateComplete).toBe(false);
@@ -39,7 +38,6 @@ describe('StepperStepComponent', () => {
 
       it('with stepper type set to Default, all HostBinding properties should have expected values', () => {
         component.type = StepperType.Default;
-        component.ngOnInit();
         expect(component.isTypeHorizontal).toBe(false);
         expect(component.isStateNextStep).toBe(false);
         expect(component.isStateComplete).toBe(false);
@@ -51,7 +49,6 @@ describe('StepperStepComponent', () => {
 
       it('with stepper type set to Horizontal, all HostBinding properties should have expected values', () => {
         component.type = StepperType.Horizontal;
-        component.ngOnInit();
         expect(component.isTypeHorizontal).toBe(true);
         expect(component.isStateNextStep).toBe(false);
         expect(component.isStateComplete).toBe(false);
@@ -64,14 +61,13 @@ describe('StepperStepComponent', () => {
       it('with step\'s state set to Default, valid set to true, active set to true, all HostBinding properties should have expected values', () => {
         component.step = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.Default,
           valid: true,
           active: true
         };
-        component.ngOnInit();
         expect(component.isTypeHorizontal).toBe(false);
         expect(component.isStateNextStep).toBe(false);
         expect(component.isStateComplete).toBe(false);
@@ -81,17 +77,56 @@ describe('StepperStepComponent', () => {
         expect(component.isInactive).toBe(false);
       });
 
+      it('with step\'s pill set, iconClass should always be empty', () => {
+        component.step = {
+          id: 'step1',
+          pill: 1,
+          title: 'Step 1',
+          desc: '',
+          state: StepperStepState.Default,
+          valid: true,
+          active: true
+        };
+        expect(component.iconClass).toBe('');
+      });
+
+      it('with step\'s pill set and icon set, iconClass should always be empty', () => {
+        component.step = {
+          id: 'step1',
+          pill: 1,
+          icon: 'fal fa-user',
+          title: 'Step 1',
+          desc: '',
+          state: StepperStepState.Default,
+          valid: true,
+          active: true
+        };
+        expect(component.iconClass).toBe('');
+      });
+
+      it('with step\'s pill not set and icon set, iconClass should return the icon classes', () => {
+        component.step = {
+          id: 'step1',
+          icon: 'fal fa-user',
+          title: 'Step 1',
+          desc: '',
+          state: StepperStepState.Default,
+          valid: true,
+          active: true
+        };
+        expect(component.iconClass).toBe('fal fa-user');
+      });
+
       it('with step\'s state set to Next Step, valid set to true, active set to true, all HostBinding properties should have expected values', () => {
         component.step = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.NextStep,
           valid: true,
           active: true
         };
-        component.ngOnInit();
         expect(component.isTypeHorizontal).toBe(false);
         expect(component.isStateNextStep).toBe(true);
         expect(component.isStateComplete).toBe(false);
@@ -104,14 +139,13 @@ describe('StepperStepComponent', () => {
       it('with step\'s state set to Complete, valid set to true, active set to true, all HostBinding properties should have expected values', () => {
         component.step = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.Complete,
           valid: true,
           active: true
         };
-        component.ngOnInit();
         expect(component.isTypeHorizontal).toBe(false);
         expect(component.isStateNextStep).toBe(false);
         expect(component.isStateComplete).toBe(true);
@@ -124,14 +158,13 @@ describe('StepperStepComponent', () => {
       it('with step\'s state set to Complete, valid set to true, active set to false, all HostBinding properties should have expected values', () => {
         component.step = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.Complete,
           valid: true,
           active: false
         };
-        component.ngOnInit();
         expect(component.isTypeHorizontal).toBe(false);
         expect(component.isStateNextStep).toBe(false);
         expect(component.isStateComplete).toBe(true);
@@ -153,7 +186,7 @@ describe('StepperStepComponent', () => {
         const stepClickSpy = jest.spyOn(component.stepClick, 'emit');
         component.step = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.Default,
@@ -168,7 +201,7 @@ describe('StepperStepComponent', () => {
         const stepClickSpy = jest.spyOn(component.stepClick, 'emit');
         const step: StepperStep = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.NextStep,
@@ -184,7 +217,7 @@ describe('StepperStepComponent', () => {
         const stepClickSpy = jest.spyOn(component.stepClick, 'emit');
         const step: StepperStep = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.Complete,
@@ -200,7 +233,7 @@ describe('StepperStepComponent', () => {
         const stepClickSpy = jest.spyOn(component.stepClick, 'emit');
         const step: StepperStep = {
           id: 'step1',
-          number: 1,
+          pill: 1,
           title: 'Step 1',
           desc: '',
           state: StepperStepState.Complete,

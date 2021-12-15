@@ -10,7 +10,7 @@ export enum StepperStepState {
 
 export interface StepperStep {
 	id: string,
-	number?: number,
+	pill?: number | string,
 	icon?: string,
 	title: string,
 	desc: string,

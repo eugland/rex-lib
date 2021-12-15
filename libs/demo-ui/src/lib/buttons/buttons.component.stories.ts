@@ -8,7 +8,7 @@ export default {
     moduleMetadata({
       imports: [],
     })
-  ],
+  ]
 } as Meta<ButtonsComponent>;
 
 const Template: Story<ButtonsComponent> = (args: ButtonsComponent) => ({

@@ -20,6 +20,7 @@ const routes: Routes = [
 	{ path: 'iconography', loadChildren: () => import('./iconography/iconography.module').then(m => m.IconographyModule) },
 	{ path: 'tabs', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule) },
 	{ path: 'accordion', loadChildren: () => import('./accordion/accordion.module').then(m => m.AccordionModule) },
+	{ path: 'steppers', loadChildren: () => import('./steppers/steppers.module').then(m => m.SteppersModule) },
 ];
 
 @NgModule({
