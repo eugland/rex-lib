@@ -26,7 +26,8 @@ export class TabsComponent implements OnInit {
       heading: 'tab 3',
       id: '3',
       active: false,
-      content: 'tab 3 content'
+      content: 'tab 3 content',
+      disabled: true
     }
   ];
 

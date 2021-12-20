@@ -1,46 +1,92 @@
 @import "../../../../one-ux/one-ux.scss";
 .rex-tabs {
-    .nav {
-        gap: 2px;
+    .nav.nav-tabs {
+        gap: 4px;
+        .nav-item {
+            &.customClass {
+                text-align: center !important;  
+            }        
+            .nav-link {
+                color: #535353;
+                border-radius: 4px 4px 0px 0px;
+                font: normal normal 600 16px/24px Open Sans;
+                &:hover {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    border: none;
+                    border-bottom: solid 3px #0E5B9F;
+                    color: #0E5B9F;
+                    background-color:  #EEEEEE;
+                }            
+                &:focus {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    border: solid 1px #0E5B9F;
+                    color: #137BC1;
+                    background-color: $white;
+                }
+                &:active {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    border: solid 1px #2C5A9A;
+                    border-bottom: solid 3px #2C5A9A;
+                    color: #0E5B9F;
+                    background-color: #EEEEEE;
+                }
+                &.active {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    border: none;
+                    border-bottom: solid 3px #137BC1;
+                    color: #137BC1;
+                    background-color: $white;
+                }
+                &.disabled {
+                    color: #B2B2B2;
+                    background-color: $white;
+                }
+            }
+        }  
     }
-    .nav-item {
-        &.customClass {
-            text-align: center !important;  
-        }        
-        .nav-link {
-            border-radius: 0;
-            border-bottom: 1px solid $gray-300;
-            color: $gray-700;
-            background-color: $white;
-            font: normal normal 600 16px/24px Open Sans;
-            &:hover {
-                box-shadow: 0 0 0 0px $blue;
-                outline: 0px solid transparent;
-                border-bottom: solid 2px $blue;
-                color: $blue-dark-1;
-                background-color: $blue-light-1;
-            }            
-            &:focus {
-                box-shadow: 0 0 0 2px $blue;
-                outline: 2px solid transparent;
-                color: $blue-dark-1;
-                background-color: $white;
+    .nav.nav-pills {
+        gap: 4px;
+        .nav-item {
+            &.customClass {
+                text-align: center !important;  
+            }        
+            .nav-link {
+                color: #535353;
+                border-radius: 4px;
+                font: normal normal 600 16px/24px Open Sans;
+                &:hover {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    color: #EEEEEE;
+                    background-color: #0E5B9F;
+                }            
+                &:focus {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;   
+                    color: $white;
+                    background-color: #0E5B9F;
+                }
+                &:active {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    border: solid 1px #1A1A1A;
+                    color: #EEEEEE;
+                    background-color: #0E5B9F;
+                }   
+                &.active {
+                    box-shadow: 0 0 0 0 transparent;
+                    outline: 0px solid transparent;
+                    color: $white;
+                    background-color: #158CD5 ;
+                }
+                &.disabled {
+                    color: #B2B2B2;
+                }
             }
-            &:active {
-                box-shadow: 0 0 0 0px $blue;
-                outline: 0px solid transparent;
-                border-bottom: solid 2px #62C9DE;
-                color: $blue;
-                background-color: $blue-light-2;
-            }
-            &.active {
-                box-shadow: 0 0 0 0px $blue;
-                outline: 0px solid transparent;
-                border: none;
-                border-bottom: solid 2px $blue;
-                color: $blue;
-                background-color: $white;
-            }
-        }
-    }  
+        }  
+    }
 }
